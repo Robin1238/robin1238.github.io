@@ -1,0 +1,156 @@
+---
+import Layout from "../layouts/Layouts.astro";
+
+import {
+  Badge,
+  Button,
+  ShowHability,
+  SectionContainer,
+  ContainerHabilities,
+} from "../components";
+
+import {
+  HtmlIcon,
+  GitHubIcon,
+  GitIcon,
+  CssIcon,
+  JsIcon,
+  NodeJsIcon,
+  AstroIcon,
+  ReactIcon,
+  MongoIcon,
+  FigmaIcon,
+  InsomniaIcon,
+  NotionIcon,
+  VisualStudioIcon,
+} from "../components";
+import PhpIcon from "../components/icons/PhpIcon.astro";
+---
+
+<Layout
+  title="Portafolio de Robbin1238: Desarrollador y programador autodidacta."
+  description=" Robbin1238. Puedes contratarme para crear aplicaciones web o móviles. Desarrollador web autodidacta especializado en crear aplicaciones únicas."
+>
+  <main>
+    <SectionContainer
+      class="flex my-12 justify-between border-b-4 border-b-white"
+    >
+      <div class="textContainer">
+        <h1 class="text-5xl mb-5 text-green font-bold">Robin Andres</h1>
+        <h2 class="text-lg">
+          Desarrollador Web Junior <Badge>Disponible</Badge>
+        </h2>
+        <p class="text-green opacity-75 mb-14 text-sm">
+          Garzón Huila- Colombia 🥑
+        </p>
+        <p class="text-lg mb-3">Si me pagaran por diseñar, moriria de hambre</p>
+      </div>
+      <img
+        class="rounded-full size-48 border-4"
+        src="../../public/Luffy.jpg"
+        alt="Foto Robin Andres"
+      />
+    </SectionContainer>
+
+    <SectionContainer>
+      <h2 class="text-4xl mt-8 mb-6 text-green font-bold">Sobre mí</h2>
+      <article class="flex flex-col items-center">
+        <p class="mb-5 text-lg">
+          Soy <span class="text-green">desarrollador web</span>, enfocado en el <span
+            class="text-green">frontend</span
+          > con aspiraciones de ser fullstack. Mi formación es <span
+            class="text-green">mayormente autodidacta</span
+          >; tengo experiencia con diversas tecnologías.
+        </p>
+        <p class="text-lg">
+          Constantemente experimento nuevos programas y recursos para
+          desarrollar mis proyectos personales. Me gusta idear y superar retos
+          que conlleven esfuerzo y dedicación, también suelo abordar las cosas
+          de manera poco convencional ya que esto me ofrece una forma de
+          enriquecer mi experiencia y conocimiento.
+        </p>
+        <Button>Descargar CV</Button>
+      </article>
+    </SectionContainer>
+
+    <SectionContainer>
+      <h2 class="text-3xl text-red mt-8 mb-6 font-bold">Habilidades</h2>
+      <ContainerHabilities>
+        <!--  -->
+        <ShowHability href="https://developer.mozilla.org/es/docs/Web/HTML">
+          <HtmlIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://developer.mozilla.org/es/docs/Web/CSS">
+          <CssIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability
+          href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+        >
+          <JsIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability
+          href="https://developer.mozilla.org/es/docs/Glossary/Node.js"
+        >
+          <NodeJsIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://astro.build">
+          <AstroIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://www.php.net">
+          <PhpIcon class="size-12" />
+        </ShowHability>
+      </ContainerHabilities>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <ContainerHabilities>
+        <!--  -->
+        <ShowHability href="https://es.react.dev">
+          <ReactIcon Class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://www.mongodb.com/es/what-is-mongodb">
+          <MongoIcon class="h-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://www.figma.com">
+          <FigmaIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://github.com/">
+          <GitHubIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://git-scm.com">
+          <GitIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability href="https://insomnia.rest">
+          <InsomniaIcon class="size-12" />
+        </ShowHability>
+      </ContainerHabilities>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <ContainerHabilities>
+        <ShowHability href="###">
+          <NotionIcon class="size-12" />
+        </ShowHability>
+        <!--  -->
+        <ShowHability>
+          <VisualStudioIcon class="size-12" />
+        </ShowHability>
+        <ShowHability
+          class="w-[465px] border-4 border-red text-xl text-red font-bold text-center"
+        >
+          Proximamente
+        </ShowHability>
+      </ContainerHabilities>
+    </SectionContainer>
+  </main>
+</Layout>

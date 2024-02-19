@@ -1,0 +1,21 @@
+{
+  "name": "super-duper-launch",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/alata": "^5.0.8",
+    "@fontsource/poppins": "^5.0.8",
+    "astro": "^4.3.6"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
