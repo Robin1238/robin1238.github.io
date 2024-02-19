@@ -10,6 +10,7 @@ export { default as HtmlIcon } from "./icons/HtmlIcon.astro";
 export { default as GitHubIcon } from "./icons/GitHubIcon.astro";
 export { default as GitIcon } from "./icons/GitIcon.astro";
 export { default as CssIcon } from "./icons/CssIcon.astro";
+export { default as LinkedinIcon } from "./icons/LinkedinIcon.astro";
 export { default as JsIcon } from "./icons/JsIcon.astro";
 export { default as NodeJsIcon } from "./icons/NodeJsIcon.astro";
 export { default as AstroIcon } from "./icons/AstroIcon.astro";
