@@ -1,14 +1,17 @@
 ---
 import Layout from "../layouts/Layouts.astro";
 
+// IMPORT SEMANTIC COMPONETS
 import {
   Badge,
   Button,
-  ShowHability,
+  TitleH2,
+  GreenText,
+  Technology,
   SectionContainer,
-  ContainerHabilities,
 } from "../components";
 
+// IMPORT LOGOS
 import {
   HtmlIcon,
   GitHubIcon,
@@ -19,50 +22,65 @@ import {
   AstroIcon,
   ReactIcon,
   MongoIcon,
+  PhpIcon,
   FigmaIcon,
   InsomniaIcon,
   NotionIcon,
+  TailwindIcon,
   VisualStudioIcon,
 } from "../components";
-import PhpIcon from "../components/icons/PhpIcon.astro";
 ---
 
 <Layout
   title="Portafolio de Robbin1238: Desarrollador y programador autodidacta."
   description=" Robbin1238. Puedes contratarme para crear aplicaciones web o móviles. Desarrollador web autodidacta especializado en crear aplicaciones únicas."
 >
-  <main>
-    <SectionContainer
-      class="flex my-12 justify-between border-b-4 border-b-white"
-    >
-      <div class="textContainer">
-        <h1 class="text-5xl mb-5 text-green font-bold">Robin Andres</h1>
+  <main class="px-4">
+    <!--  -->
+    <!--. Presentation -->
+    <!--  -->
+    <SectionContainer class="flex justify-between border-b-4 border-b-white">
+      <div>
+        <h1 class="text-5xl mb-5 text-green font-bold xs:text-4xl font-poppins">
+          Robin Andres
+        </h1>
+
         <h2 class="text-lg">
-          Desarrollador Web Junior <Badge>Disponible</Badge>
+          Desarrollador Web Junior. <Badge>Disponible</Badge>
         </h2>
-        <p class="text-green opacity-75 mb-14 text-sm">
-          Garzón Huila- Colombia 🥑
+
+        <p>
+          <GreenText class="opacity-75 text-sm">
+            Garzón Huila- Colombia 🌐
+          </GreenText>
         </p>
-        <p class="text-lg mb-3">Si me pagaran por diseñar, moriria de hambre</p>
+
+        <p class="my-5 text-pretty">
+          Si me pagaran por diseñar, moriria de hambre
+        </p>
       </div>
       <img
-        class="rounded-full size-48 border-4"
-        src="../../public/Luffy.jpg"
+        class="rounded-full size-48 border-4 sm:hidden my-5"
+        src=`../../public/Luffy.jpg`
         alt="Foto Robin Andres"
       />
     </SectionContainer>
-
+    <!--  -->
+    <!--. About Me -->
+    <!--  -->
     <SectionContainer>
-      <h2 class="text-4xl mt-8 mb-6 text-green font-bold">Sobre mí</h2>
-      <article class="flex flex-col items-center">
-        <p class="mb-5 text-lg">
-          Soy <span class="text-green">desarrollador web</span>, enfocado en el <span
-            class="text-green">frontend</span
-          > con aspiraciones de ser fullstack. Mi formación es <span
-            class="text-green">mayormente autodidacta</span
-          >; tengo experiencia con diversas tecnologías.
+      <TitleH2 class="text-green">Sobre mí</TitleH2>
+      <article
+        class="flex flex-col items-center *:text-pretty *:sm:text-xl *:text-lg *:mb-5"
+      >
+        <p>
+          Soy <GreenText>desarrollador web</GreenText>, enfocado en el
+          <GreenText>frontend</GreenText>
+          con aspiraciones de ser fullstack. Mi formación es
+          <GreenText>mayormente autodidacta</GreenText>; tengo experiencia con
+          diversas tecnologías.
         </p>
-        <p class="text-lg">
+        <p>
           Constantemente experimento nuevos programas y recursos para
           desarrollar mis proyectos personales. Me gusta idear y superar retos
           que conlleven esfuerzo y dedicación, también suelo abordar las cosas
@@ -72,85 +90,82 @@ import PhpIcon from "../components/icons/PhpIcon.astro";
         <Button>Descargar CV</Button>
       </article>
     </SectionContainer>
-
+    <!--  -->
+    <!--. technologies -->
+    <!--  -->
     <SectionContainer>
-      <h2 class="text-3xl text-red mt-8 mb-6 font-bold">Habilidades</h2>
-      <ContainerHabilities>
+      <TitleH2 class="text-red">Habilidades</TitleH2>
+      <div class="grid gap-5 grid-cols-5 sm:grid-cols-3">
         <!--  -->
-        <ShowHability href="https://developer.mozilla.org/es/docs/Web/HTML">
-          <HtmlIcon class="size-12" />
-        </ShowHability>
+        <!-- ICONS -->
         <!--  -->
-        <ShowHability href="https://developer.mozilla.org/es/docs/Web/CSS">
-          <CssIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability
-          href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-        >
-          <JsIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability
-          href="https://developer.mozilla.org/es/docs/Glossary/Node.js"
-        >
-          <NodeJsIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://astro.build">
-          <AstroIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://www.php.net">
-          <PhpIcon class="size-12" />
-        </ShowHability>
-      </ContainerHabilities>
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <ContainerHabilities>
-        <!--  -->
-        <ShowHability href="https://es.react.dev">
-          <ReactIcon Class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://www.mongodb.com/es/what-is-mongodb">
+        <!--, HTML ICON LINK -->
+        <Technology href="https://developer.mozilla.org/es/docs/Web/HTML">
+          <HtmlIcon />
+        </Technology>
+        <!--, CSS ICON LINK -->
+        <Technology href="https://developer.mozilla.org/es/docs/Web/CSS">
+          <CssIcon />
+        </Technology>
+        <!--, JavaScript ICON LINK -->
+        <Technology href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+          <JsIcon />
+        </Technology>
+        <!--, NODE JS ICON LINK -->
+        <Technology href="https://nodejs.org/en">
+          <NodeJsIcon />
+        </Technology>
+        <!--, ASTRO INCON LINK -->
+        <Technology href="https://astro.build">
+          <AstroIcon />
+        </Technology>
+        <!--, Tailwind ICON LINK  -->
+        <Technology href="https://tailwindcss.com">
+          <TailwindIcon />
+        </Technology>
+        <!--, PHP ICON LINK  -->
+        <Technology href="https://www.php.net">
+          <PhpIcon />
+        </Technology>
+        <!--, MONGO ICON LINK   -->
+        <Technology href="https://www.mongodb.com/es/what-is-mongodb">
           <MongoIcon class="h-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://www.figma.com">
-          <FigmaIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://github.com/">
-          <GitHubIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://git-scm.com">
-          <GitIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability href="https://insomnia.rest">
-          <InsomniaIcon class="size-12" />
-        </ShowHability>
-      </ContainerHabilities>
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <ContainerHabilities>
-        <ShowHability href="###">
-          <NotionIcon class="size-12" />
-        </ShowHability>
-        <!--  -->
-        <ShowHability>
-          <VisualStudioIcon class="size-12" />
-        </ShowHability>
-        <ShowHability
-          class="w-[465px] border-4 border-red text-xl text-red font-bold text-center"
-        >
-          Proximamente
-        </ShowHability>
-      </ContainerHabilities>
+        </Technology>
+        <!--, REACT INCON LINK -->
+        <Technology href="https://es.react.dev">
+          <ReactIcon />
+        </Technology>
+        <!--, FIGMA ICON LINK  -->
+        <Technology href="https://www.figma.com">
+          <FigmaIcon />
+        </Technology>
+        <!--, GITHUB ICON LINK -->
+        <Technology href="https://github.com/">
+          <GitHubIcon />
+        </Technology>
+        <!--, GIT ICON LINK  -->
+        <Technology href="https://git-scm.com">
+          <GitIcon />
+        </Technology>
+        <!--, INSOMNIA ICON LINK  -->
+        <Technology href="https://insomnia.rest">
+          <InsomniaIcon />
+        </Technology>
+        <!--, NOTION ICON LINK  -->
+        <Technology href="https://www.notion.so/es-es/product">
+          <NotionIcon />
+        </Technology>
+        <!--, VSCODE ICON LINK  -->
+        <Technology href="https://code.visualstudio.com">
+          <VisualStudioIcon />
+        </Technology>
+      </div>
+    </SectionContainer>
+    <!--  -->
+    <!--. Projects -->
+    <!--  -->
+    <SectionContainer>
+      <TitleH2 class="text-yellow">Mis proyectos</TitleH2>
     </SectionContainer>
   </main>
 </Layout>

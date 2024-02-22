@@ -3,9 +3,16 @@ import { LinkedinIcon, GitHubIcon } from "../components";
 ---
 
 <header
-  class="flex justify-between p-12 py-3 items-center w-[820px] mx-auto bg-white-lightOp10"
+  class="flex flex-wrap items-center justify-between max-w-[820px] p-4 mx-auto sm:min-w-[340px]"
 >
-  <h2 class="tittle text-2xl">Robbin1238</h2>
+  <a
+    href="https://github.com/Robin1238"
+    target="_blank"
+    class="flex items-center space-x-3"
+  >
+    <img src="../../public/Icono.svg" class="h-8" alt="Robin Logo" />
+    <span class="text-3xl font-semibold font-poppins">Robbin1238</span>
+  </a>
 
   <nav class="flex flex-row gap-5">
     <a href="https://www.linkedin.com/in/robbin1238" target="_blank">
@@ -14,7 +21,6 @@ import { LinkedinIcon, GitHubIcon } from "../components";
 
     <a href="https://github.com/Robin1238" target="_blank">
       <GitHubIcon class="size-7 hover:scale-105 transition" />
-      <a href="###">Menu</a>
     </a>
   </nav>
 </header>

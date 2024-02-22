@@ -2,6 +2,7 @@
 import "@fontsource/alata";
 import "@fontsource/poppins";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -24,6 +25,7 @@ const { description, title } = Astro.props;
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -34,10 +36,6 @@ const { description, title } = Astro.props;
   html {
     background: #262928;
   }
-  h1 {
-    font-family: "Poppins", sans-serif;
-  }
-
   body {
     font-family: "Alata", sans-serif;
     color: #dfe0e2;

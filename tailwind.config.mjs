@@ -10,32 +10,46 @@ export default {
 				dark: "#6A6E75",
 				DEFAULT: "#191919"
 			},
+
 			white: {
 				DEFAULT: "#DFE0E2",
 				light50: "rgb(223, 224, 226, 0.5)",
 				lightOp20: "rgb(223, 224, 226, 0.2)",
 				lightOp10: "rgb(223, 224, 226, 0.1)"
 			},
+
 			green: {
 				ligthOp20: "rgb(13, 171, 118, 0.2)",
-				ligth: "#67f3c4",
-				DEFAULT: "#0DAB76"
+				ligth: "#7af3ca",
+				DEFAULT: "#12CC8D"
 			},
+
 			red: {
-				DEFAULT: "#B3494B",
+				DEFAULT: "#FBA8A9",
 				purple: "#70133C"
 			},
+
 			yellow: {
 				DEFAULT: "#FEDC97",
 				light50: "rgb(254, 220, 151, 0.5)"
 			},
+
 			blue: {
-				DEFAULT: "#3C91E6",
+				DEFAULT: "#61A9FD",
 				light50: "rgb(60, 145, 230, 0.2)"
-
 			}
-
 		},
+
+		screens: {
+			'md': { 'min': '768px' },
+			'sm': { 'max': '570px' },
+			'xs': { 'max': '400px' }
+		},
+		fontFamily: {
+			'poppins': ['Poppins', 'sans-serif']
+		},
+
+
 		extend: {},
 	},
 	plugins: [],

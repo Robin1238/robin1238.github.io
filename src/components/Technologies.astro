@@ -1,0 +1,11 @@
+---
+const { class: className } = Astro.props;
+---
+
+<a
+  class={` ${className} md:hover:border-4 border-red h-16 bg-black-lightOp90 grid place-items-center rounded cursor-default *:size-12`}
+  {...Astro.props}
+  target="_blank"
+>
+  <slot />
+</a>
