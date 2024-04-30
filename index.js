@@ -1,3 +1,4 @@
+//Project pagination
 const projectGroups = document.querySelectorAll('.project-group');
 const prevBtn = document.getElementById('PrevPage');
 const nextBtn = document.getElementById('NextPage');
@@ -23,3 +24,19 @@ nextBtn.addEventListener('click', () => {
   pageIndex = Math.min(projectGroups.length - 1, pageIndex + 1);
   showProjectGroup(pageIndex);
 });
+
+
+//Ramdon Phrase
+const randomText = document.querySelectorAll(".random-text");
+let random = Math.floor(Math.random() * 5)
+
+const showPhrase = (show) =>{
+  randomText.forEach(phrase => phrase.style.display = "none")
+  const phraseToShow = randomText[show]
+  if (phraseToShow) {
+    phraseToShow.style.display = "block";
+  }
+}
+
+
+
