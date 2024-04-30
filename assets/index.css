@@ -333,7 +333,7 @@ video {
   margin-top: 1.25rem;
 }
 .mt-6 {
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
 }
 .flex {
   display: flex;
@@ -488,10 +488,6 @@ video {
 }
 .text-center {
   text-align: center;
-}
-.project-group img {
-  max-width: 225px;
-  min-width: 225px;
 }
 
 .font-poppins {
