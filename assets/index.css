@@ -333,7 +333,7 @@ video {
   margin-top: 1.25rem;
 }
 .mt-6 {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 .flex {
   display: flex;
@@ -659,9 +659,6 @@ video {
   .lg\:mt-16 {
     margin-top: 4rem;
   }
-  .lg\:max-h-\[144px\]{
-    max-height: 144px;
-  }
 }
 @media (max-width: 767px) {
   .md\:mb-1 {
@@ -824,9 +821,8 @@ body {
   font-family: Alata, sans-serif;
   color: #dfe0e2;
 }
-
 .scrollable-container {
-  overflow-y: hidden;
+  overflow-y: auto;
   scrollbar-width: thin;
 }
 .scrollable-container::-webkit-scrollbar {
@@ -842,21 +838,12 @@ body {
   background-color: #fedc97;
   opacity: 1;
 }
-.scrollable-container::-webkit-scrollbar-thumb {
-  background-color: #fedc97;
-  opacity: 1;
-}
 .scrollable-container::-webkit-scrollbar-track {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 .scrollable-container:hover::-webkit-scrollbar-track {
-  opacity: 1;
-  background-color: #d1d5db;
-  border-radius: 50px;
-}
-.scrollable-container::-webkit-scrollbar-track {
   opacity: 1;
   background-color: #d1d5db;
   border-radius: 50px;
