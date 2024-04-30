@@ -2,7 +2,7 @@ const projectGroups = document.querySelectorAll('.project-group');
 const prevBtn = document.getElementById('PrevPage');
 const nextBtn = document.getElementById('NextPage');
 
-let pageIndex = 1;
+let pageIndex = 0;
 
 const showProjectGroup = (index) => {
   projectGroups.forEach(group => group.style.display = 'none');
