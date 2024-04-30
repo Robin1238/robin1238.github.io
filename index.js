@@ -2,12 +2,10 @@ const projectGroups = document.querySelectorAll('.project-group');
 const prevBtn = document.getElementById('PrevPage');
 const nextBtn = document.getElementById('NextPage');
 
-let pageIndex = 0;
+let pageIndex = 1;
 
 const showProjectGroup = (index) => {
-
   projectGroups.forEach(group => group.style.display = 'none');
-
   const groupToShow = projectGroups[index];
   if (groupToShow) {
     groupToShow.style.display = 'block';
