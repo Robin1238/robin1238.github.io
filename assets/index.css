@@ -659,6 +659,9 @@ video {
   .lg\:mt-16 {
     margin-top: 4rem;
   }
+  .lg\:max-h-\[144px\]{
+    max-height: 144px;
+  }
 }
 @media (max-width: 767px) {
   .md\:mb-1 {
