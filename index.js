@@ -1,3 +1,17 @@
+//Ramdon Phrase
+const randomText = document.querySelectorAll(".random-text");
+let random = Math.floor(Math.random() * 5)
+
+const showPhrase = (show) =>{
+  randomText.forEach(phrase => phrase.style.display = "none")
+  const phraseToShow = randomText[show]
+  if (phraseToShow) {
+    phraseToShow.style.display = "block";
+  }
+}
+
+showPhrase(random)
+
 //Project pagination
 const projectGroups = document.querySelectorAll('.project-group');
 const prevBtn = document.getElementById('PrevPage');
@@ -26,19 +40,8 @@ nextBtn.addEventListener('click', () => {
 });
 
 
-//Ramdon Phrase
-const randomText = document.querySelectorAll(".random-text");
-let random = Math.floor(Math.random() * 5)
 
-const showPhrase = (show) =>{
-  randomText.forEach(phrase => phrase.style.display = "none")
-  const phraseToShow = randomText[show]
-  if (phraseToShow) {
-    phraseToShow.style.display = "block";
-  }
-}
 
-showPhrase(random)
 
 
 
