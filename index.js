@@ -38,5 +38,7 @@ const showPhrase = (show) =>{
   }
 }
 
+showPhrase(random)
+
 
 
