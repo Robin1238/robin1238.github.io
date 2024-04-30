@@ -841,12 +841,21 @@ body {
   background-color: #fedc97;
   opacity: 1;
 }
+.scrollable-container:-webkit-scrollbar-thumb {
+  background-color: #fedc97;
+  opacity: 1;
+}
 .scrollable-container::-webkit-scrollbar-track {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 .scrollable-container:hover::-webkit-scrollbar-track {
+  opacity: 1;
+  background-color: #d1d5db;
+  border-radius: 50px;
+}
+.scrollable-container:-webkit-scrollbar-track {
   opacity: 1;
   background-color: #d1d5db;
   border-radius: 50px;
