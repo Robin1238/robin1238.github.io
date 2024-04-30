@@ -824,8 +824,9 @@ body {
   font-family: Alata, sans-serif;
   color: #dfe0e2;
 }
+
 .scrollable-container {
-  overflow-y: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
 }
 .scrollable-container::-webkit-scrollbar {
@@ -841,7 +842,7 @@ body {
   background-color: #fedc97;
   opacity: 1;
 }
-.scrollable-container:-webkit-scrollbar-thumb {
+.scrollable-container::-webkit-scrollbar-thumb {
   background-color: #fedc97;
   opacity: 1;
 }
@@ -855,7 +856,7 @@ body {
   background-color: #d1d5db;
   border-radius: 50px;
 }
-.scrollable-container:-webkit-scrollbar-track {
+.scrollable-container::-webkit-scrollbar-track {
   opacity: 1;
   background-color: #d1d5db;
   border-radius: 50px;
