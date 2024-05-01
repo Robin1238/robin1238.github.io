@@ -309,8 +309,9 @@ video {
   --tw-backdrop-saturate: ;
   --tw-backdrop-sepia: ;
 }
-.random-text {
+#random-text {
   text-wrap: pretty;
+  margin-bottom: 10px;
 }
 .mx-auto {
   margin-left: auto;
