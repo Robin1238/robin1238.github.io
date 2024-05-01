@@ -1,8 +1,9 @@
 //Ramdon Phrase
 const randomText = document.querySelectorAll(".random-text");
-let random = Math.floor(Math.random() * 5)
+let random = Math.floor(Math.random() * randomText.length)
 
-const showPhrase = (show) =>{
+
+const showPhrase = (show) => {
   randomText.forEach(phrase => phrase.style.display = "none")
   const phraseToShow = randomText[show]
   if (phraseToShow) {
@@ -38,10 +39,3 @@ nextBtn.addEventListener('click', () => {
   pageIndex = Math.min(projectGroups.length - 1, pageIndex + 1);
   showProjectGroup(pageIndex);
 });
-
-
-
-
-
-
-

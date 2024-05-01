@@ -320,6 +320,12 @@ video {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -396,6 +402,10 @@ video {
 }
 .gap-5 {
   gap: 1.25rem;
+}
+.flex-anchor {
+  display: flex;
+  grid-column-gap: 5px;
 }
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -653,10 +663,14 @@ video {
     margin-bottom: 0.75rem;
   }
   .lg\:mt-16 {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 @media (max-width: 767px) {
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .md\:mb-1 {
     margin-bottom: 0.25rem;
   }
@@ -720,6 +734,7 @@ video {
   .sm\:p-1 {
     padding: 0.25rem;
   }
+
   .sm\:text-center {
     text-align: center;
   }
