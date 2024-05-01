@@ -317,6 +317,11 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+
+.mx-auto-svg {
+  margin-left: auto;
+  margin-right: auto;
+}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
