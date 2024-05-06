@@ -1,19 +1,23 @@
-.green-svg{
-  top: 150px; 
-  right: 25px; 
-
-}
 .svg-deco{
   position: absolute; 
   z-index: 10
 }
 
+.green-svg{
+  max-width: 373px;
+  top: 150px; 
+  right: 25px; 
+
+}
+
 .red-svg{
+  max-width: 320px;
   top: 745px; 
   left: 25px; 
 }
 
 .blue-svg{
+  width: 304px;
   bottom: 25px; 
   right: 25px; 
 }
