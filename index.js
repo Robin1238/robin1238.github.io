@@ -66,16 +66,12 @@ function resizeSVG() {
   if (view > width) {
     view = width
     console.log("La pagina se esta haciendo mas peque " + view) ;
-    redContainer.style.width = (redContainer.offsetWidth - 1) + 'px'
+    redContainer.style.width = (parseInt(redContainer.style.width) - 1) + 'px'
   }
 
   if (view < width) {
     view = width
     console.log("La pagina se esta haciendo mas grande " + view) ;
+    redContainer.style.width = (parseInt(redContainer.style.width) + 1) + 'px'
   }
-
-
-
-  
-
 }
