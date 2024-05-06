@@ -50,28 +50,53 @@ renderPhrase()
 //   showProjectGroup(pageIndex);
 // });
 
-let view = document.documentElement.clientWidth
+
+
+// let view = document.documentElement.clientWidth
+
+// window.addEventListener('resize', function () {
+//   resizeSVG()
+// })
+
+// function resizeSVG() {
+//   let greenContainer = document.getElementById('svg-green')
+//   let redContainer = document.getElementById('svg-red')
+//   let blueContainer = document.getElementById('svg-blue')
+//   let width = document.documentElement.clientWidth
+//   let heigt = document.documentElement.clientHeight
+
+//   if (view > width) {
+//     view = width
+//     console.log("La pagina se esta haciendo mas peque " + view) ;
+//     redContainer.style.width = (parseInt(redContainer.style.width) - 1) + 'px'
+//   }
+
+//   if (view < width) {
+//     view = width
+//     console.log("La pagina se esta haciendo mas grande " + view) ;
+//     redContainer.style.width = (parseInt(redContainer.style.width) + 1) + 'px'
+//   }
+// }
+
+let view = document.documentElement.clientWidth;
 
 window.addEventListener('resize', function () {
-  resizeSVG()
-})
+  resizeSVG();
+});
 
 function resizeSVG() {
-  let greenContainer = document.getElementById('svg-green')
-  let redContainer = document.getElementById('svg-red')
-  let blueContainer = document.getElementById('svg-blue')
-  let width = document.documentElement.clientWidth
-  let heigt = document.documentElement.clientHeight
-
-  if (view > width) {
-    view = width
-    console.log("La pagina se esta haciendo mas peque " + view) ;
-    redContainer.style.width = (parseInt(redContainer.style.width) - 1) + 'px'
-  }
+  let redContainer = document.getElementById('svg-red');
+  let width = document.documentElement.clientWidth;
 
   if (view < width) {
-    view = width
-    console.log("La pagina se esta haciendo mas grande " + view) ;
-    redContainer.style.width = (parseInt(redContainer.style.width) + 1) + 'px'
+    console.log("La página se está haciendo más grande " + width);
+    redContainer.style.width = (parseInt(redContainer.style.width) + 1) + 'px';
   }
+
+  if (view > width) {
+    console.log("La página se está haciendo más grande " + width);
+    redContainer.style.width = (parseInt(redContainer.style.width) - 1) + 'px';
+  }
+
+  view = width; // Actualizamos view solo cuando la ventana se hace más grande
 }
