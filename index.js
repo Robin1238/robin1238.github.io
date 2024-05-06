@@ -78,25 +78,3 @@ renderPhrase()
 //   }
 // }
 
-let view = document.documentElement.clientWidth;
-
-window.addEventListener('resize', function () {
-  resizeSVG();
-});
-
-function resizeSVG() {
-  let redContainer = document.getElementById('svg-red');
-  let width = document.documentElement.clientWidth;
-
-  if (view < width) {
-    console.log("La página se está haciendo más grande " + width);
-    redContainer.style.width = (parseInt(redContainer.style.width) + 1) + 'px';
-  }
-
-  if (view > width) {
-    console.log("La página se está haciendo más grande " + width);
-    redContainer.style.width = (parseInt(redContainer.style.width) - 1) + 'px';
-  }
-
-  view = width; // Actualizamos view solo cuando la ventana se hace más grande
-}

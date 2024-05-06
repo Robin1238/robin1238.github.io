@@ -708,6 +708,9 @@ video {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+  .md\:hidden {
+    display: none;
+  }
 }
 @media (max-width: 569px) {
   .sm\:hidden {
