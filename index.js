@@ -50,30 +50,26 @@ renderPhrase()
 //   showProjectGroup(pageIndex);
 // });
 
+let view = document.documentElement.clientWidth
 
 window.addEventListener('resize', function () {
   resizeSVG()
 })
 
 function resizeSVG() {
-  let grennContainer = document.getElementById('svg-green').clientWidth
-
+  let greenContainer = document.getElementById('svg-green')
   let redContainer = document.getElementById('svg-red')
   let blueContainer = document.getElementById('svg-blue')
+  let width = document.documentElement.clientWidth
+  let heigt = document.documentElement.clientHeight
+
+  if (view > width) {
+    view = width
+    console.log("La pagina se esta haciendo mas peque" + view) ;
+  }
 
 
 
-
-
-  let an = document.documentElement.clientWidth
-
-  let al = document.documentElement.clientHeight
-
-
-
-
-
-
-  console.log(grennContainer);
+  
 
 }
