@@ -4,14 +4,14 @@
 }
 
 .green-svg{
-  max-width: 373px;
+  max-width: 100px;
   top: 150px; 
   right: 25px; 
 
 }
 
 .red-svg{
-  max-width: 320px;
+  max-width: 100px;
   top: 745px; 
   left: 25px; 
 }
@@ -28,23 +28,23 @@
 }
 
 .gif-green {
-  width: 194px;
+  width: 174px;
   right: 79px;
   top: 458px;
 
 }
 
 .gif-red {
-  width: 105px;
-  height: 112px;
+  width: 93px;
+  height: 100px;
   left: 69px;
   top: 940px;
 }
 
 .gif-blue {
-  width: 126px;
-  height: 124px;
-  right: 165px;
-  bottom: 195px;
+  width: 100px;
+  height: 96px;
+  right: 139px;
+  bottom: 169px;
   z-index: 9;
 }
