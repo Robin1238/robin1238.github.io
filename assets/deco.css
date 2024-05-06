@@ -1,11 +1,40 @@
-.svg-green{
-  max-width: 273px;
-  height: auto;
-  min-width: 100px;
- 
+.green-deco {
+  width: 100%;
+}
+#svg-green {
+  width: 250px;
+}
+#svg-red {
+  width: 250px;
+}
+#svg-blue {
+  width: 300px;
 }
 
-.greendeco{
-  width: 100%;
-  height: 100%;
+.gif-green {
+  position: absolute;
+  width: 194px;
+
+  right: 79px;
+  top: 458px;
+  z-index: 11;
+}
+
+.gif-red {
+  position: absolute;
+  width: 105px;
+  height: 112px;
+  left: 69px;
+  top: 940px;
+  z-index: 11;
+}
+
+.gif-blue {
+  position: absolute;
+  width: 126px;
+  height: 124px;
+
+  right: 165px;
+  bottom: 195px;
+  z-index: 9;
 }
