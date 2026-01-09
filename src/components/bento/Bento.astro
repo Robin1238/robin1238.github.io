@@ -28,6 +28,12 @@ import Cv from "./bento-elements/Cv.astro";
   <div class="bento-element-13 bento-element"><AboutMe /></div>
 </div>
 
+<div class="mobile-warning">
+  <p class="text">Esta página <span id="Dawn">ve mejor en pc</span> . Estoy trabajando en la <span id="Dawn">versión móvil</span>.</p>
+
+  <img style="width: 50%;" class="gif" src="/images/Sorry.gif" alt="Decoartion" />
+</div>
+
 <style>
   .bento {
     width: 100%;
@@ -123,4 +129,34 @@ import Cv from "./bento-elements/Cv.astro";
     grid-row-start: 4;
     grid-column-start: 1;
   }
+  .mobile-warning {
+    display: none;
+  }
+  .mobile-warning .text {
+        font-family: "ABeeZee-Regular", Verdana;
+  }
+
+  @media (max-width: 768px) {
+    .bento {
+      display: none;
+    }
+    .mobile-warning {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+ 
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0px 20px;
+    }
+    .mobile-warning .gif {
+          border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+  
+
 </style>

@@ -13,6 +13,12 @@ import { projects } from "../../data/projectsData.ts";
   </div>
 </section>
 
+<div class="mobile-warning">
+  <p class="text">Esta página <span id="Dawn">ve mejor en pc</span> . Estoy trabajando en la <span id="Dawn">versión móvil</span>.</p>
+
+  <img style="width: 50%;" class="gif" src="/images/Sorry.gif" alt="Decoartion" />
+</div>
+
 <style>
   .projects-container {
     width: 100%;
@@ -37,4 +43,34 @@ import { projects } from "../../data/projectsData.ts";
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
   }
+
+  .mobile-warning {
+    display: none;
+  }
+  .mobile-warning .text {
+        font-family: "ABeeZee-Regular", Verdana;
+  }
+
+  @media (max-width: 768px) {
+    .projects-container {
+      display: none;
+    }
+    .mobile-warning {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+ 
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0px 20px;
+    }
+    .mobile-warning .gif {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+  
 </style>
