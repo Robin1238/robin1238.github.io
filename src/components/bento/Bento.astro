@@ -1,0 +1,126 @@
+---
+import ExpYears from "./bento-elements/ExpYears.astro";
+import ThemeToggle from "../ThemeToggle.astro";
+import Carrousel from "./bento-elements/Carrousel.astro";
+import Projects from "./bento-elements/Projects.astro";
+import DrawMain from "./bento-elements/DrawMain.astro";
+import DrawMini from "./bento-elements/DrawMini.astro";
+import Networks from "./bento-elements/Networks.astro";
+import BigName from "./bento-elements/BigName.astro";
+import AboutMe from "./bento-elements/AboutMe.astro";
+import Phrases from "./bento-elements/Phrases.astro";
+import Gif from "./bento-elements/Gif.astro";
+import Cv from "./bento-elements/Cv.astro";
+---
+
+<div class="bento">
+  <div class="bento-element-1 bento-element"><BigName /></div>
+  <div class="bento-element-2 bento-element"><Gif /></div>
+  <div class="bento-element-3 bento-element"><ExpYears /></div>
+  <div class="bento-element-4 bento-element"><DrawMain /></div>
+  <div class="bento-element-5 bento-element"><Networks /></div>
+  <div class="bento-element-6 bento-element"><Carrousel /></div>
+  <div class="bento-element-8 bento-element"><Phrases /></div>
+  <div class="bento-element-9 bento-element"><DrawMini /></div>
+  <div class="bento-element-10 bento-element"><Projects /></div>
+  <div class="bento-element-11 bento-element"><ThemeToggle /></div>
+  <div class="bento-element-12 bento-element"><Cv /></div>
+  <div class="bento-element-13 bento-element"><AboutMe /></div>
+</div>
+
+<style>
+  .bento {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .bento-element {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .bento-element-1 {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+  }
+
+  .bento-element-2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 6;
+    grid-row-start: 1;
+  }
+
+  .bento-element-3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 1;
+  }
+
+  .bento-element-4 {
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-column-start: 4;
+    grid-row-start: 4;
+  }
+
+  .bento-element-5 {
+    grid-row: span 5 / span 5;
+    grid-column-start: 8;
+    grid-row-start: 3;
+  }
+
+  .bento-element-6 {
+    grid-column: span 4 / span 4;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 8;
+  }
+
+  .bento-element-8 {
+    grid-column: span 5 / span 5;
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+
+  .bento-element-9 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 8;
+  }
+
+  .bento-element-10 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 7;
+    grid-row-start: 8;
+  }
+
+  .bento-element-11 {
+    grid-column: span 1 / span 1;
+    grid-row: span 1 / span 1;
+    grid-column-start: 8;
+    grid-row-start: 1;
+  }
+
+  .bento-element-12 {
+    grid-column: span 1 / span 1;
+    grid-row: span 1 / span 1;
+    grid-column-start: 8;
+    grid-row-start: 2;
+  }
+
+  .bento-element-13 {
+    grid-column: span 3 / span 3;
+    grid-row: span 4 / span 4;
+    grid-row-start: 4;
+    grid-column-start: 1;
+  }
+</style>

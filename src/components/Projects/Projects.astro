@@ -1,0 +1,40 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { projects } from "../../data/projectsData.ts";
+---
+
+<section class="projects-container">
+  <p>
+    <h1 id="Dawn">Proyectos</h1>
+    <p class="text">Pequeña selección de trabajos que he realizado</p>
+  </p>
+  <div class="projects-grid">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </div>
+</section>
+
+<style>
+  .projects-container {
+    width: 100%;
+    padding: 0px 150px;
+  }
+
+  .projects-container h1 {
+    font-family: "Array-Wide", sans-serif;
+    font-size: clamp(1.25rem, 3vw, 4.75rem);
+  }
+
+  .projects-container .text {
+    font-family: "ABeeZee-Regular", Verdana;
+    font-size: clamp(1.25rem, 1vw, 1rem);
+  }
+  .projects-container p {
+    margin-bottom: 2rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+</style>

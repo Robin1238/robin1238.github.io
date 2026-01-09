@@ -1,0 +1,87 @@
+---
+const images = [
+  "/logos/habilities/HTML5.png",
+  "/logos/habilities/CSS3.png",
+  "/logos/habilities/JavaScript.png",
+  "/logos/habilities/TypeScript.png",
+  "/logos/habilities/Astro.png",
+  "/logos/habilities/React.png",
+  "/logos/habilities/Tailwind CSS.png",
+  "/logos/habilities/Node.js.png",
+  "/logos/habilities/Insomnia.png",
+  "/logos/habilities/MySQL.png",
+  "/logos/habilities/Visual Studio Code (VS Code).png",
+];
+
+const allImages = [...images, ...images];
+const animationSpeed = "20s";
+---
+
+<div class="slider">
+  <div class="slide-track" style={`animation: scroll ${animationSpeed} linear infinite;`}>
+    {
+      allImages.map((src) => (
+        <div class="slide">
+          <img class="logo" src={src} alt="" />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .slider {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg-second-surface);
+  }
+
+  .logo {
+    height: 100%;
+  }
+
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(to right, var(--bg-color) 0%, #00000000 100%);
+  }
+
+  .slider::after {
+    right: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider::before {
+    left: 0;
+  }
+
+  .slide-track {
+    display: flex;
+    width: calc(130px * 14);
+    animation: scroll linear infinite;
+  }
+
+  .slide {
+    width: 130px;
+    height: 70px;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-130px * 11));
+    }
+  }
+</style>

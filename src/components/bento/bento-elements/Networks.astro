@@ -1,0 +1,77 @@
+<div class="socials">
+  <a href="https://github.com/Robin1238" target="_blank">
+    <img class="logo logo-github" alt="GitHub" title="GitHub Robbin1238" />
+  </a>
+
+  <a href="https://www.linkedin.com/in/robbin1238/" target="_blank">
+    <img class="logo logo-linkedin" alt="LinkedIn" title="Linkedin Robin Andres" />
+  </a>
+
+  <a id="emailLink" target="_blank">
+    <img class="logo logo-email" alt="Email" title="Contacto email Robin" />
+  </a>
+</div>
+
+<style>
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  .socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: clamp(20px, 5vw, 70px);
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+  }
+
+  .socials a:hover .logo {
+    transform: scale(1.1);
+    transform: rotate(5deg);
+  }
+
+  .logo-github {
+    content: url("/logos/github/github-black.png");
+  }
+
+  .logo-linkedin {
+    content: url("/logos/linkedin/Linkedin-black.png");
+  }
+
+  .logo-email {
+    content: url("/logos/email/email-black.png");
+  }
+
+  :global(.dark) .logo-github {
+    content: url("/logos/github/github-white.png");
+  }
+
+  :global(.dark) .logo-linkedin {
+    content: url("/logos/linkedin/Linkedin-white.png");
+  }
+
+  :global(.dark) .logo-email {
+    content: url("/logos/email/email-white.png");
+  }
+</style>
+
+<script is:inline>
+  const user = "robin.a.dev";
+  const domain = "gmail.com";
+
+  const emailLink = document.getElementById("emailLink");
+  emailLink.href = `mailto:${user}@${domain}`;
+  emailLink.title = `${user}@${domain}`;
+</script>

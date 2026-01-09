@@ -1,0 +1,29 @@
+<div class="container">
+  <a href="/art">
+    <img class="draw" src="/images/Draw1.png" alt="Decoartion" />
+  </a>
+</div>
+
+<style>
+  .container {
+    pointer-events: none; /* DELETE THIS */
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .draw {
+    filter: blur(0.7px);
+    filter: brightness(80%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+</style>

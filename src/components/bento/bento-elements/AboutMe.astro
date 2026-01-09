@@ -1,0 +1,91 @@
+<a href="/about-me" class="card-link" aria-disabled="true">
+  <div class="container">
+    <header>
+      <p>
+        <span class="grettings"
+          >👋 Hola! Soy <span class="bold"> Robin Andres</span>, un gusto.</span
+        >
+      </p>
+      <img class="profile" src="/images/Me.jpg" alt="Me" />
+    </header>
+    <p>
+      <span class="text">
+        <span class="bold" id="Dawn">Desarrollador web</span>, con experiencia en <span
+          class="bold"
+          id="Dawn">frontend y diseño</span
+        >
+        con el objetivo de convertirme en desarrollador fullstack. Mi formación se basa en el
+        aprendizaje <span class="bold" id="Dawn">autodidacta</span>, lo que me ha
+        permitido adquirir experiencia en una amplia gama de tecnologías.
+      </span>
+
+      <!-- <span class="text">Si quieres conocer mas, adelante. </span> -->
+    </p>
+  </div>
+</a>
+
+<style>
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    border: 3px solid var(--divisor);
+    background-color: var(--bg-surface);
+    font-family: "Satoshi-Medium", Verdana, sans-serif;
+    border-radius: 8px;
+  }
+
+  .card-link {
+    pointer-events: none; /* DELETE THIS */
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .profile {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 3px solid var(--text-color);
+    padding: 2px;
+  }
+
+  header {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  p {
+    margin: 0;
+    font-size: clamp(1.2rem, 1vw, 1.5rem);
+    line-height: 1.1;
+  }
+
+  .text {
+    color: var(--text-primary);
+    opacity: 0.8;
+    margin: 0.5rem 0;
+    display: block;
+  }
+
+  .bold {
+    font-weight: 900;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0.75rem;
+    }
+
+    .text {
+      font-size: 0.95rem;
+    }
+  }
+</style>
