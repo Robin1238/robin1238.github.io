@@ -6,7 +6,6 @@
     target="_blank"
   >
     <img class="logo logo-cv" alt="Cv" />
-    <span class="text"> Curriculum </span>
   </a>
 </div>
 
@@ -19,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "ABeeZee-Regular", Verdana;
+    font-family: "ABeeZee", Verdana;
     background-color: var(--bg-surface);
     transition: 0.2s all;
     border: 3px solid var(--bg-second-surface);
@@ -46,17 +45,17 @@
   }
 
   .logo {
-    width: clamp(16px, 5vw, 32px);
+    width: clamp(16px, 5vw, 48px);
     height: auto;
     color: #101316;
     transition: color 0.3s ease;
   }
 
   .logo-cv {
-    content: url("/logos/cv/Cv-black.png");
+    content: url("images/logos/cv/Cv-black.png");
   }
 
   :global(.dark) .logo-cv {
-    content: url("/logos/cv/Cv-white.png");
+    content: url("images/logos/cv/Cv-white.png");
   }
 </style>

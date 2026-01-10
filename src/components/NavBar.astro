@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle.astro";
   <a href="/">
     <img
       class="logo logo-arrow"
-      src="/logos/arrow-left/arrow-left-white.png"
+      src="images/logos/arrow-left/arrow-left-white.png"
       alt="Go back"
       title="Go main"
     />
@@ -16,7 +16,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     <a href="https://github.com/Robin1238" target="_blank">
       <img
         class="logo logo-github"
-        src="/logos/github/github-black.png"
+        src="images/logos/github/github-black.png"
         alt="GitHub"
         title="GitHub Robbin1238"
       />
@@ -24,7 +24,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     <a href="https://www.linkedin.com/in/robbin1238/" target="_blank">
       <img
         class="logo logo-linkedin"
-        src="/logos/linkedin/Linkedin-black.png"
+        src="images/logos/linkedin/Linkedin-black.png"
         alt="LinkedIn"
         title="Linkedin Robin Andres"
       />
@@ -50,7 +50,7 @@ import ThemeToggle from "./ThemeToggle.astro";
   }
 
   nav p {
-    font-family: "Array-Wide", sans-serif;
+    font-family: "Array", sans-serif;
     font-size: clamp(1.1rem, 1vw, 1.2rem);
     margin: 0;
   }
@@ -70,25 +70,25 @@ import ThemeToggle from "./ThemeToggle.astro";
   }
 
   .logo-github {
-    content: url("/logos/github/github-black.png");
+    content: url("images/logos/github/github-black.png");
   }
 
   .logo-arrow {
-    content: url("/logos/arrow-left/arrow-left-black.png");
+    content: url("images/logos/arrow-left/arrow-left-black.png");
   }
 
   .logo-linkedin {
-    content: url("/logos/linkedin/Linkedin-black.png");
+    content: url("images/logos/linkedin/Linkedin-black.png");
   }
 
   :global(.dark) .logo-github {
-    content: url("/logos/github/github-white.png");
+    content: url("images/logos/github/github-white.png");
   }
   :global(.dark) .logo-arrow {
-    content: url("/logos/arrow-left/arrow-left-white.png");
+    content: url("images/logos/arrow-left/arrow-left-white.png");
   }
 
   :global(.dark) .logo-linkedin {
-    content: url("/logos/linkedin/Linkedin-white.png");
+    content: url("images/logos/linkedin/Linkedin-white.png");
   }
 </style>

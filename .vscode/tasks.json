@@ -1,0 +1,15 @@
+{
+
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Iniciar servidor",
+        "type": "shell",
+        "command": "pnpm run dev --host",
+        "isBackground": true,
+        "runOptions": {
+        "runOn": "folderOpen"
+      }
+      }
+  ]
+}

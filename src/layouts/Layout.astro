@@ -38,8 +38,40 @@
       name="description"
       content=" Robbin1238. Puedes contratarme para crear aplicaciones web o móviles. Desarrollador web autodidacta especializado en crear aplicaciones únicas."
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="preload"
+      href="/fonts/ABeeZee/ABeeZee-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Array/Array-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Satoshi/Satoshi-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Satoshi/Satoshi-Black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preload" as="image" href="/images/Draw1.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/Draw2.webp" fetchpriority="high" />
 
     <title>Robbin D. ev</title>
   </head>
@@ -130,7 +162,7 @@
   */
 
   @font-face {
-    font-family: "ABeeZee-Regular";
+    font-family: "ABeeZee";
     src: url("/fonts/ABeeZee/ABeeZee-Regular.ttf") format("truetype");
     font-weight: 400;
     font-display: swap;
@@ -144,61 +176,24 @@
   */
 
   @font-face {
-    font-family: "Array-Wide";
-    src:
-      url("/fonts/Array/Array-Wide.woff2") format("woff2"),
-      url("/fonts/Array/Array-Wide.woff") format("woff"),
-      url("/fonts/Array/Array-Wide.ttf") format("truetype");
+    font-family: "Array";
+    src: url("/fonts/Array/Array-Regular.woff2") format("woff2");
     font-weight: 400;
     font-display: swap;
     font-style: normal;
   }
+
   @font-face {
-    font-family: "Array-Regular";
-    src:
-      url("/fonts/Array/Array-Regular.woff2") format("woff2"),
-      url("/fonts/Array/Array-Regular.woff") format("woff"),
-      url("/fonts/Array/Array-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Array-Semibold";
-    src:
-      url("/fonts/Array/Array-Semibold.woff2") format("woff2"),
-      url("/fonts/Array/Array-Semibold.woff") format("woff"),
-      url("/fonts/Array/Array-Semibold.ttf") format("truetype");
+    font-family: "Array";
+    src: url("/fonts/Array/Array-Semibold.woff2") format("woff2");
     font-weight: 600;
     font-display: swap;
     font-style: normal;
   }
+
   @font-face {
-    font-family: "Array-SemiboldWide";
-    src:
-      url("/fonts/Array/Array-SemiboldWide.woff2") format("woff2"),
-      url("/fonts/Array/Array-SemiboldWide.woff") format("woff"),
-      url("/fonts/Array/Array-SemiboldWide.ttf") format("truetype");
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Array-BoldWide";
-    src:
-      url("/fonts/Array/Array-BoldWide.woff2") format("woff2"),
-      url("/fonts/Array/Array-BoldWide.woff") format("woff"),
-      url("/fonts/Array/Array-BoldWide.ttf") format("truetype");
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Array-Bold";
-    src:
-      url("/fonts/Array/Array-Bold.woff2") format("woff2"),
-      url("/fonts/Array/Array-Bold.woff") format("woff"),
-      url("/fonts/Array/Array-Bold.ttf") format("truetype");
+    font-family: "Array";
+    src: url("/fonts/Array/Array-Bold.woff2") format("woff2");
     font-weight: 700;
     font-display: swap;
     font-style: normal;
@@ -211,51 +206,36 @@
   */
 
   @font-face {
-    font-family: "Satoshi-Light";
-    src:
-      url("/fonts/Satoshi/Satoshi-Light.woff2") format("woff2"),
-      url("/fonts/Satoshi/Satoshi-Light.woff") format("woff"),
-      url("/fonts/Satoshi/Satoshi-Light.ttf") format("truetype");
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Light.woff2") format("woff2");
     font-weight: 300;
     font-display: swap;
     font-style: normal;
   }
   @font-face {
-    font-family: "Satoshi-Regular";
-    src:
-      url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2"),
-      url("/fonts/Satoshi/Satoshi-Regular.woff") format("woff"),
-      url("/fonts/Satoshi/Satoshi-Regular.ttf") format("truetype");
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
     font-weight: 400;
     font-display: swap;
     font-style: normal;
   }
   @font-face {
-    font-family: "Satoshi-Medium";
-    src:
-      url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2"),
-      url("/fonts/Satoshi/Satoshi-Medium.woff") format("woff"),
-      url("/fonts/Satoshi/Satoshi-Medium.ttf") format("truetype");
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
     font-weight: 500;
     font-display: swap;
     font-style: normal;
   }
   @font-face {
-    font-family: "Satoshi-Bold";
-    src:
-      url("/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2"),
-      url("/fonts/Satoshi/Satoshi-Bold.woff") format("woff"),
-      url("/fonts/Satoshi/Satoshi-Bold.ttf") format("truetype");
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2");
     font-weight: 700;
     font-display: swap;
     font-style: normal;
   }
   @font-face {
-    font-family: "Satoshi-Black";
-    src:
-      url("/fonts/Satoshi/Satoshi-Black.woff2") format("woff2"),
-      url("/fonts/Satoshi/Satoshi-Black.woff") format("woff"),
-      url("/fonts/Satoshi/Satoshi-Black.ttf") format("truetype");
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
     font-weight: 900;
     font-display: swap;
     font-style: normal;
@@ -283,6 +263,12 @@
     animation: none;
     animation-fill-mode: both;
     z-index: -1;
+  }
+
+  @keyframes scale {
+    to {
+      mask-size: 200vmax;
+    }
   }
 
   #Dawn {
@@ -327,12 +313,6 @@
     }
     91% {
       color: rgb(255, 0, 127);
-    }
-  }
-
-  @keyframes scale {
-    to {
-      mask-size: 200vmax;
     }
   }
 </style>
