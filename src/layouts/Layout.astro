@@ -17,9 +17,13 @@
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <link rel="preload" as="image" href="/images/webp/Avatar.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/webp/Draw1.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/webp/Draw2.webp" fetchpriority="high" />
+
     <link
       rel="preload"
-      href="/fonts/Array/Array-Regular.woff2"
+      href="/fonts/Array/Array-Semibold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -113,6 +117,8 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
     }
 
     body {

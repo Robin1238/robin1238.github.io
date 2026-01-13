@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import avatarImg from "../../../../assets/images/webp/Avatar.webp";
 import CircleCheck from "../../../../assets/images/svgs/Circle-Check.svg";
 import CircleAlert from "../../../../assets/images/svgs/Circle-Alert.svg";
 
@@ -17,6 +15,7 @@ const { size = "1.5rem", aviability = true } = Astro.props;
   <span
     class="avatar-frame"
     style={`border-color: ${aviability ? "var(--green)" : "var(--yellow)"}`}
+    title={`${aviability ? "Disponible" : "Trabajando"}`}
   >
     <span class="avatar-icon" style={`--icon-size: ${size}`}>
       {
@@ -27,12 +26,7 @@ const { size = "1.5rem", aviability = true } = Astro.props;
         )
       }
     </span>
-    <Image
-      fetchpriority="high"
-      src={avatarImg}
-      alt="Avatar Robbin D. ev"
-      class="avatar-image"
-    />
+    <img src="/images/webp/Avatar.webp" class="avatar-image" alt="Avatar Robbin D. ev" />
   </span>
 </div>
 

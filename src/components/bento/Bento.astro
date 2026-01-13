@@ -56,11 +56,12 @@ import Skills from "./elements/skills/Skills.astro";
 
   @media (min-width: 768px) {
     .bento {
+      scrollbar-gutter: auto;
       display: grid;
       gap: 0.5rem;
       margin: 8px 64px;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(20, minmax(0, 1fr));
+      grid-template-rows: repeat(11, minmax(0, 1fr));
     }
     .item-about {
       grid-column: 1 / 5;

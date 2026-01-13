@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import heroImg from "../../../../assets/images/webp/Draw1.webp";
-
 import Avatar from "./Avatar.astro";
 import Information from "./Info.astro";
 import Actions from "./Actions.astro";
@@ -16,7 +13,7 @@ const { aviability = true } = Astro.props;
 
 <div class="hero">
   <div class="image-wrapper">
-    <Image fetchpriority="high" src={heroImg} alt="Imagen hero" class="image-hero" />
+    <img src="/images/webp/Draw1.webp" alt="Imagen hero" class="image-hero" />
   </div>
 
   <div class="hero-container">
