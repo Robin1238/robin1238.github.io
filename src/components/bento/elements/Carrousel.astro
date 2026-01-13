@@ -1,0 +1,87 @@
+---
+const images = [
+  "images/habilities/HTML5.png",
+  "images/habilities/CSS3.png",
+  "images/habilities/JavaScript.png",
+  "images/habilities/TypeScript.png",
+  "images/habilities/Astro.png",
+  "images/habilities/React.png",
+  "images/habilities/Tailwind CSS.png",
+  "images/habilities/Node.js.png",
+  "images/habilities/Insomnia.png",
+  "images/habilities/MySQL.png",
+  "images/habilities/Visual Studio Code (VS Code).png",
+];
+
+const allImages = [...images, ...images];
+const animationSpeed = "20s";
+---
+
+<div class="slider">
+  <div class="slide-track" style={`animation: scroll ${animationSpeed} linear infinite;`}>
+    {
+      allImages.map((src) => (
+        <div class="slide">
+          <img class="logo" src={src} alt="" />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .slider {
+    height: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .logo {
+    height: 100%;
+  }
+
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(to right, var(--bg-color) 0%, #00000000 100%);
+  }
+
+  .slider::after {
+    right: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider::before {
+    left: 0;
+  }
+
+  .slide-track {
+    display: flex;
+    padding: 8px 0px;
+    width: calc(90px * 14);
+    animation: scroll linear infinite;
+  }
+
+  .slide {
+    width: 90px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-90px * 11));
+    }
+  }
+</style>

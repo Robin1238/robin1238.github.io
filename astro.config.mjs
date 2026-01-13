@@ -3,6 +3,10 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    svgo: true,
+  },
+
   site: "https://robin1238.github.io",
   outDir: "./docs",
 });

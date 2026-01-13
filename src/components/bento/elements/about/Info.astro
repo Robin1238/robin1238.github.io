@@ -1,0 +1,65 @@
+---
+import Map from "../../../../assets/images/svgs/Map.svg";
+---
+
+<div class="container">
+  <div class="text">
+    <h2 class="name center" id="Dawn-color">Robbin Andres</h2>
+
+    <p class="profesion muted center">Software Developer Junior</p>
+    <div class="location">
+      <Map class="map muted" />
+      <p class="footnote muted center">Garzón - Huila • Colombia</p>
+    </div>
+  </div>
+  <p class="phrase center">
+    Boceto ideas, escribo código y mejoro con cada proyecto que desarrollo.
+  </p>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .text .name {
+    font-family: "Array";
+    font-weight: 600;
+  }
+
+  .text .profesion {
+    font-weight: 600;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .phrase {
+    text-wrap: balance;
+    line-height: 1;
+    max-width: 400px;
+  }
+
+  .footnote {
+    font-size: var(--font-size-0);
+  }
+
+  .map {
+    width: 13px;
+    height: 13px;
+  }
+</style>

@@ -1,94 +1,72 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import Linkedin from "../assets/images/svgs/Linkedin.svg";
+import GitHub from "../assets/images/svgs/GitHub.svg";
+
+/**
+ * Props:
+ * - size: string
+ */
+
+const { size = "1.5rem" } = Astro.props;
 ---
 
-<nav>
-  <a href="/">
-    <img
-      class="logo logo-arrow"
-      src="/images/logos/arrow-left/arrow-left-white.png"
-      alt="Go back"
-      title="Go main"
-    />
-  </a>
+<nav style={`--icon-size: ${size}`}>
+  <a href="/"><span class="logo-robin">RA</span> </a>
 
   <div class="container">
-    <a href="https://github.com/Robin1238" target="_blank">
-      <img
-        class="logo logo-github"
-        src="/images/logos/github/github-black.png"
-        alt="GitHub"
-        title="GitHub Robbin1238"
-      />
+    <a href="https://github.com/Robin1238" target="_blank" aria-label="GitHub">
+      <GitHub class="logo logo-github" />
     </a>
-    <a href="https://www.linkedin.com/in/robbin1238/" target="_blank">
-      <img
-        class="logo logo-linkedin"
-        src="/images/logos/linkedin/Linkedin-black.png"
-        alt="LinkedIn"
-        title="Linkedin Robin Andres"
-      />
+    <a
+      href="https://www.linkedin.com/in/robbin1238/"
+      target="_blank"
+      aria-label="Linkedin"
+    >
+      <Linkedin class="logo logo-linkedin" />
     </a>
-    <div class="toggle">
-      <ThemeToggle />
-    </div>
+
+    <ThemeToggle size={size} />
   </div>
 </nav>
 
 <style>
   nav {
+    z-index: 10;
     width: 100%;
-    height: 40px;
-    background-color: var(--bg-second-surface);
+    height: var(--icon-size);
+    backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 20px;
     position: sticky;
     top: 0;
     box-sizing: border-box;
-  }
-
-  nav p {
-    font-family: "Array", sans-serif;
-    font-size: clamp(1.1rem, 1vw, 1.2rem);
-    margin: 0;
+    background-color: var(--bg-second-surface);
   }
 
   .container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+  }
+  .container a,
+  .container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .logo-robin {
+    font-family: "ABeeZee", verdana;
+    font-weight: 900;
   }
 
   .logo {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    transition: transform 0.2s ease;
-    cursor: pointer;
-  }
+    width: var(--icon-size);
+    height: var(--icon-size);
 
-  .logo-github {
-    content: url("/images/logos/github/github-black.png");
-  }
-
-  .logo-arrow {
-    content: url("/images/logos/arrow-left/arrow-left-black.png");
-  }
-
-  .logo-linkedin {
-    content: url("/images/logos/linkedin/Linkedin-black.png");
-  }
-
-  :global(.dark) .logo-github {
-    content: url("/images/logos/github/github-white.png");
-  }
-  :global(.dark) .logo-arrow {
-    content: url("/images/logos/arrow-left/arrow-left-white.png");
-  }
-
-  :global(.dark) .logo-linkedin {
-    content: url("/images/logos/linkedin/Linkedin-white.png");
+    display: block;
   }
 </style>

@@ -2,36 +2,12 @@
 <html lang="en">
   <head>
     <script is:inline>
-      function setTheme() {
-        const theme = (() => {
-          if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-            return localStorage.getItem("theme");
-          }
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            return "dark";
-          }
-          return "light";
-        })();
-
-        if (theme === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-        document.documentElement.dataset.theme =
-          theme === "light" ? "github-light" : "dracula";
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        document.documentElement.dataset.theme = theme;
       }
-
-      document.addEventListener("astro:page-load", () => {
-        setTheme();
-      });
-
-      document.addEventListener("astro:after-swap", () => {
-        setTheme();
-      });
-
-      setTheme();
     </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta
@@ -43,13 +19,6 @@
 
     <link
       rel="preload"
-      href="/fonts/ABeeZee/ABeeZee-Regular.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
-    <link
-      rel="preload"
       href="/fonts/Array/Array-Regular.woff2"
       as="font"
       type="font/woff2"
@@ -57,21 +26,11 @@
     />
     <link
       rel="preload"
-      href="/fonts/Satoshi/Satoshi-Regular.woff2"
+      href="/fonts/Satoshi/Satoshi-Variable.woff2"
       as="font"
       type="font/woff2"
-      crossorigin="anonymous"
+      crossorigin
     />
-    <link
-      rel="preload"
-      href="/fonts/Satoshi/Satoshi-Black.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-
-    <link rel="preload" as="image" href="/images/Draw1.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="/images/Draw2.webp" fetchpriority="high" />
 
     <title>Robbin D. ev</title>
   </head>
@@ -81,238 +40,285 @@
 </html>
 
 <style is:global>
-  :root {
-    --bg-color: #fef7ff;
-    --bg-surface: #f1ecf4;
-    --bg-second-surface: #e5e1e9;
-    --divisor: #c8c9ce;
-    --text-color: #101316;
-    --overlay: #10131688;
-    --transparent: #10131680;
-    --white: #fef7ff;
-    --black: #101316;
-  }
+  @layer theme {
+    :root {
+      color-scheme: light dark;
 
-  html.dark {
-    --bg-color: #101316;
-    --bg-surface: #15181c;
-    --bg-second-surface: #23252c;
-    --divisor: #3c434890;
-    --overlay: #10131688;
-    --text-color: #fef7ff;
-    --transparent: #fef7ff80;
-    --white: #fef7ff;
-    --black: #101316;
-  }
+      --scale-ratio: 1.333;
+      --font-size-0: clamp(11px, 1rem, 13px);
+      --font-size-1: clamp(14px, 1rem, 16px);
+      --font-size-2: clamp(18px, calc(var(--font-size-1) * var(--scale-ratio)), 20px);
+      --font-size-3: clamp(24px, calc(var(--font-size-2) * var(--scale-ratio)), 28px);
+      --font-size-4: clamp(32px, calc(var(--font-size-3) * var(--scale-ratio)), 36px);
 
-  html,
-  body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
+      --font-sans: "Satoshi";
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+      --transparent: var(--muted);
+      --bg-color: var(--color-bg);
+      --bg-surface: var(--color-surface);
+      --bg-second-surface: var(--color-surface-2);
+      --divisor: var(--color-divider);
+      --text-color: var(--color-text);
+      --green: #2a9f30;
+      --yellow: #eca927;
 
-  p {
-    text-wrap: pretty;
-    margin: 0;
-    padding: 0;
-  }
+      --shadow-0: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      --shadow-1: 0px 4px 4px -2px rgba(0, 0, 0, 0.06);
+      --shadow-2: 0px 4px 4px -2px rgba(0, 0, 0, 0.08);
+      --shadow-3: 0px 8px 12px -4px rgba(0, 0, 0, 0.08);
+      --shadow-4: 0px 12px 16px -4px rgba(0, 0, 0, 0.06);
+      --shadow-5: 0px 25px 50px -12px rgba(0, 0, 0, 0.08);
+      --shadow-6: 0px 30px 60px -18px rgba(0, 0, 0, 0.12);
+    }
 
-  input,
-  button,
-  textarea,
-  select {
-    font-family: inherit;
-    font-size: inherit;
-  }
+    :root {
+      --color-bg: #f0f5f7;
+      --color-surface: #f9fbfd;
+      --color-surface-2: #e5e1e9;
+      --bg-surface-inverse: #15181c;
+      --bg-surface-inverse-2: #23252c;
+      --color-divider: #c8c9ce;
+      --color-text: #101316;
+      --text-inverse: #f0f5f7;
+      --muted: #10131680;
+    }
 
-  a:link {
-    text-decoration: inherit;
-    color: inherit;
-  }
+    :root[data-theme="dark"] {
+      --color-bg: #101316;
+      --color-surface: #15181c;
+      --color-surface-2: #23252c;
+      --bg-surface-inverse: #f9fbfd;
+      --bg-surface-inverse-2: #e5e1e9;
+      --color-divider: #3a3a3a;
+      --color-text: #f0f5f7;
+      --text-inverse: #101316;
+      --muted: #fef7ff80;
+    }
 
-  a:visited {
-    text-decoration: inherit;
-    color: inherit;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-    font-weight: initial;
-  }
-
-  /* 
-  
-   ABeeZee FONT
-  
-  */
-
-  @font-face {
-    font-family: "ABeeZee";
-    src: url("/fonts/ABeeZee/ABeeZee-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-
-  /*
-  
-  ARRAY FONT
-  
-  */
-
-  @font-face {
-    font-family: "Array";
-    src: url("/fonts/Array/Array-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Array";
-    src: url("/fonts/Array/Array-Semibold.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Array";
-    src: url("/fonts/Array/Array-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-  }
-
-  /*
-  
-  SATOSHI FONT
-  
-  */
-
-  @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi/Satoshi-Light.woff2") format("woff2");
-    font-weight: 300;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi/Satoshi-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi/Satoshi-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi/Satoshi-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi/Satoshi-Black.woff2") format("woff2");
-    font-weight: 900;
-    font-display: swap;
-    font-style: normal;
-  }
-
-  /*
-
-  TRANSITION THEME
-
-*/
-
-  ::view-transition-group(root) {
-    animation-timing-function: var(--expo-in);
-  }
-
-  ::view-transition-new(root) {
-    mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>')
-      center / 0 no-repeat;
-    animation: scale 1s;
-    animation-fill-mode: both;
-  }
-
-  ::view-transition-old(root),
-  .dark::view-transition-old(root) {
-    animation: none;
-    animation-fill-mode: both;
-    z-index: -1;
-  }
-
-  @keyframes scale {
-    to {
-      mask-size: 200vmax;
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --color-bg: #101316;
+        --color-surface: #15181c;
+        --color-surface-2: #23252c;
+        --color-divider: rgb(58 58 58);
+        --color-text: #f0f5f7;
+      }
     }
   }
 
-  #Dawn {
-    animation: rainbow 5s linear;
-    animation-iteration-count: infinite;
+  @layer reset {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    a {
+      margin: 0;
+      font-weight: inherit;
+      font-size: inherit;
+    }
   }
 
-  @keyframes rainbow {
-    100%,
-    0% {
-      color: rgb(255, 0, 0);
+  @layer base {
+    html {
+      block-size: 100%;
     }
-    8% {
-      color: rgb(255, 127, 0);
+
+    body {
+      min-block-size: 100%;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-sans), sans-serif;
     }
-    16% {
-      color: rgb(255, 255, 0);
+
+    a:where(:link, :visited) {
+      color: inherit;
+      text-decoration: none;
     }
-    25% {
-      color: rgb(127, 255, 0);
+  }
+
+  @layer fonts {
+    /* === Fonts: ABeeZee === */
+    @font-face {
+      font-family: "ABeeZee";
+      src: url("/fonts/ABeeZee/ABeeZee-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-display: swap;
     }
-    33% {
-      color: rgb(0, 255, 0);
+
+    /* === Fonts: Array === */
+
+    @font-face {
+      font-family: "Array";
+      src: url("/fonts/Array/Array-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-display: swap;
     }
-    41% {
-      color: rgb(0, 255, 127);
+    @font-face {
+      font-family: "Array";
+      src: url("/fonts/Array/Array-Semibold.woff2") format("woff2");
+      font-weight: 600;
+      font-display: swap;
     }
-    50% {
-      color: rgb(0, 255, 255);
+    @font-face {
+      font-family: "Array";
+      src: url("/fonts/Array/Array-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-display: swap;
     }
-    58% {
-      color: rgb(0, 127, 255);
+
+    /* === Fonts: Satoshi === */
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("/fonts/Satoshi/Satoshi-Variable.woff2") format("woff2");
+      font-weight: 300 900;
+      font-display: swap;
     }
-    66% {
-      color: rgb(0, 0, 255);
+  }
+
+  @layer buttons {
+    :is(.button-primary, .button-secondary) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+      padding: 8px 20px;
+      border-radius: 4px;
+      text-align: center;
+      transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
-    75% {
-      color: rgb(127, 0, 255);
+
+    .button-primary {
+      background-color: var(--color-text);
+      color: var(--color-bg);
     }
-    83% {
-      color: rgb(255, 0, 255);
+
+    .button-secondary {
+      background-color: var(--color-surface-2);
+      color: var(--color-text);
     }
-    91% {
-      color: rgb(255, 0, 127);
+  }
+
+  @layer typography {
+    h1 {
+      font-size: var(--font-size-4);
+    }
+
+    h2 {
+      font-size: var(--font-size-3);
+    }
+
+    h3 {
+      font-size: var(--font-size-2);
+    }
+
+    p,
+    li,
+    a {
+      font-size: var(--font-size-1);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .center {
+      text-align: center;
+    }
+  }
+
+  @layer view-transition {
+    ::view-transition-group(root) {
+      animation-timing-function: var(--expo-in);
+    }
+
+    ::view-transition-new(root) {
+      mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="20" cy="20" r="18" fill="white" filter="url(%23blur)"/></svg>')
+        center / 0 no-repeat;
+      animation: scale 1s;
+      animation-fill-mode: both;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-old(root) {
+      animation: none;
+      z-index: -1;
+    }
+    @keyframes scale {
+      to {
+        mask-size: 200vmax;
+      }
+    }
+  }
+
+  @layer animations {
+    @layer rainbow-slide {
+      #Dawn-slide {
+        background: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet,
+          purple,
+          red
+        );
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow-slide 10s linear infinite;
+      }
+
+      @keyframes rainbow-slide {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 300% 0%;
+        }
+      }
+    }
+
+    @layer rainbow-color {
+      #Dawn-color {
+        color: green;
+        animation: rainbow 30s linear infinite;
+      }
+
+      @keyframes rainbow {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
     }
   }
 </style>

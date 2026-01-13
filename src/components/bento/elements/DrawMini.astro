@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import draw from "../../../assets/images/webp/Draw3.webp";
+---
+
+<a href="/art" class="container">
+  <Image
+    src={draw}
+    alt="Imagen hero"
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+    class="draw"
+  />
+</a>
+
+<style>
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .draw {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: brightness(90%) blur(0.3px);
+  }
+
+  :global(.dark) .draw {
+    filter: brightness(80%);
+  }
+</style>
