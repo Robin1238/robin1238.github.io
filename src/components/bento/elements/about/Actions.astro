@@ -21,17 +21,13 @@ import Link from "../../../../assets/images/svgs/Link.svg";
   <div class="buttons">
     <a
       href="https://drive.google.com/file/d/1XQc81GCuWrfUIEoJ21Z6k6Tj_adBwCCp/view?usp=sharing"
-      class="button-primary"
+      class="btn button-primary"
       target="_blank"
     >
-      <FileUser class="circle-user" /><span> CV</span>
+      <FileUser class="icon" /><span> CV</span>
     </a>
-    <a
-      href="https://github.com/Robin1238"
-      class="button-secondary disabled"
-      target="_blank"
-    >
-      <Link class="circle-user" /><span>Sobre Mí</span>
+    <a href="https://github.com/Robin1238" class="btn button-secondary" target="_blank">
+      <Link class="icon" /><span>Sobre Mí</span>
     </a>
   </div>
 </div>
@@ -98,9 +94,13 @@ import Link from "../../../../assets/images/svgs/Link.svg";
     gap: 8px;
   }
 
-  .circle-user {
-    width: 16px;
-    height: 16px;
+  .btn {
+    width: 100%;
+  }
+
+  .icon {
+    width: var(--font-size-1);
+    height: var(--font-size-1);
   }
 
   @media (min-width: 360px) {

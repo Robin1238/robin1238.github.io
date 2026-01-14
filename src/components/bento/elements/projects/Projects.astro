@@ -1,41 +1,146 @@
 ---
-/**
- * Props:
- * - aviability : boolean
- */
-const { link = "/hi" } = Astro.props;
+import ExternalLink from "../../../../assets/images/svgs/External-Link.svg";
+import { projects } from "../../../../data/projectsData.ts";
 ---
 
-<a href={`${link}`} class="container disabled">
-  <img
-    src="/images/webp/projects/Ccp1.webp"
-    class="draw"
-    alt="Dibujo decorarivo hecho por Robin"
-  />
-</a>
+<article class="project-card" data-projects={JSON.stringify(projects)}>
+  <img class="media media-a is-visible" alt="" />
+  <img class="media media-b" alt="" />
+
+  <div class="fade-overlay"></div>
+
+  <div class="content">
+    <div class="text">
+      <h3 class="title"></h3>
+      <p class="desc"></p>
+    </div>
+
+    <a href="/projects" class="btn button-primary">
+      <span>Proyectos</span>
+      <ExternalLink class="icon" />
+    </a>
+  </div>
+</article>
 
 <style>
-  .container {
+  .project-card {
     position: relative;
     height: 100%;
     width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
   }
 
-  a.disabled {
-    pointer-events: none;
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  .draw {
+  .media {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
     object-fit: cover;
-    filter: brightness(90%) blur(0.3px);
+    opacity: 0;
+    transition: opacity 0.8s ease;
   }
 
-  :global(.dark) .draw {
-    filter: brightness(80%);
+  .media.is-visible {
+    opacity: 1;
+  }
+
+  .fade-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  .content {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .text {
+    margin: 8px 0px;
+  }
+
+  .title {
+    font-family: "ABeeZee", Verdana;
+    letter-spacing: 0.5px;
+    font-size: var(--font-size-1);
+    font-weight: 900;
+  }
+
+  .desc {
+    color: var(--transparent);
+    font-weight: 400;
+  }
+
+  .btn {
+    font-size: var(--font-size-1);
+  }
+
+  .icon {
+    width: var(--font-size-1);
+    height: var(--font-size-1);
+  }
+
+  @media (min-width: 768px) {
+    .project-card {
+      aspect-ratio: auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    /* .content {
+      display: flex;
+      justify-content: space-between;
+    } */
   }
 </style>
+
+<script is:inline>
+  const card = document.querySelector(".project-card");
+  const projects = JSON.parse(card.dataset.projects);
+
+  const imgA = card.querySelector(".media-a");
+  const imgB = card.querySelector(".media-b");
+  const title = card.querySelector(".title");
+  const desc = card.querySelector(".desc");
+
+  let index = 0;
+  let showA = true;
+
+  function showProject(i) {
+    const p = projects[i];
+
+    const incoming = showA ? imgB : imgA;
+    const outgoing = showA ? imgA : imgB;
+
+    incoming.src = p.image;
+    incoming.alt = p.title;
+
+    incoming.classList.add("is-visible");
+    outgoing.classList.remove("is-visible");
+
+    title.textContent = p.title;
+    desc.textContent = p.shortDesc ?? p.description;
+
+    showA = !showA;
+  }
+
+  showProject(index);
+
+  setInterval(() => {
+    index = (index + 1) % projects.length;
+    showProject(index);
+  }, 8000);
+</script>

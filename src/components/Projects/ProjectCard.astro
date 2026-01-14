@@ -1,32 +1,34 @@
 ---
 import type { Project } from "../../types/projectType";
 
-const { title, description, image, tech, year, status } = Astro.props;
+const { title, description, image, tech, year, status, link = "/projects" } = Astro.props;
 ---
 
-<article class="project-card">
-  <img src={image} alt={title} loading="lazy" />
+<a href={`${link}`} target="_blank">
+  <article class="project-card">
+    <img src={image} alt={title} loading="lazy" />
 
-  <div class="content">
-    <p class="date">{year}</p>
-    <div class="head">
-      <h3>{title}</h3>
-      {
-        status && (
-          <span class="badge" id="Dawn">
-            {status}
-          </span>
-        )
-      }
+    <div class="content">
+      <p class="date">{year}</p>
+      <div class="head">
+        <h3>{title}</h3>
+        {
+          status && (
+            <span class="badge" id="Dawn">
+              {status}
+            </span>
+          )
+        }
+      </div>
+
+      <p class="description">{description}</p>
+
+      <ul class="tech">
+        {tech.map((item: Project) => <li>{item}</li>)}
+      </ul>
     </div>
-
-    <p class="description">{description}</p>
-
-    <ul class="tech">
-      {tech.map((item: Project) => <li>{item}</li>)}
-    </ul>
-  </div>
-</article>
+  </article>
+</a>
 
 <style>
   .project-card {
