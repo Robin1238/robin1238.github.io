@@ -1,4 +1,41 @@
-<a href="">
-  <div></div>
-  <div></div>
+---
+/**
+ * Props:
+ * - aviability : boolean
+ */
+const { link = "/hi" } = Astro.props;
+---
+
+<a href={`${link}`} class="container disabled">
+  <img
+    src="/images/webp/projects/Ccp1.webp"
+    class="draw"
+    alt="Dibujo decorarivo hecho por Robin"
+  />
 </a>
+
+<style>
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  a.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .draw {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    filter: brightness(90%) blur(0.3px);
+  }
+
+  :global(.dark) .draw {
+    filter: brightness(80%);
+  }
+</style>

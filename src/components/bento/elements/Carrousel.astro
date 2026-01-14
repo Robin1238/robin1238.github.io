@@ -14,7 +14,7 @@ const images = [
 ];
 
 const allImages = [...images, ...images];
-const animationSpeed = "20s";
+const animationSpeed = "30s";
 ---
 
 <div class="slider">
@@ -43,7 +43,7 @@ const animationSpeed = "20s";
     height: 100%;
   }
   .logo {
-    filter: drop-shadow(0 0 0.25rem var(--muted));
+    filter: drop-shadow(0 0 0.25rem var(--transparent));
     content: "";
     height: 100%;
   }
@@ -56,16 +56,16 @@ const animationSpeed = "20s";
     height: 100%;
     top: 0;
     z-index: 2;
-    background: linear-gradient(to right, var(--bg-color) 0%, #00000000 100%);
+    background: linear-gradient(to right, var(--bg-color) 15%, #00000000 100%);
   }
 
   .slider::after {
-    right: 0;
+    right: -1px;
     transform: rotateZ(180deg);
   }
 
   .slider::before {
-    left: 0;
+    left: -1px;
   }
 
   .slide-track {

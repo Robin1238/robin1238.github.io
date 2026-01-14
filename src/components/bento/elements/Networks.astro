@@ -1,14 +1,32 @@
+---
+import GitHub from "../../../assets/images/svgs/GitHub.svg";
+import Linkedin from "../../../assets/images/svgs/Linkedin.svg";
+import Send from "../../../assets/images/svgs/Send.svg";
+import Instagram from "../../../assets/images/svgs/Instagram.svg";
+---
+
 <div class="socials">
+  <a href="https://www.instagram.com/robbin.1239/" target="_blank">
+    <div class="network-icon" id="Dawn-color">
+      <Instagram class="logo" />
+    </div>
+  </a>
   <a href="https://github.com/Robin1238" target="_blank">
-    <img class="logo logo-github" alt="GitHub" title="GitHub Robbin1238" />
+    <div class="network-icon" id="Dawn-color">
+      <GitHub class="logo" />
+    </div>
   </a>
 
   <a href="https://www.linkedin.com/in/robbin1238/" target="_blank">
-    <img class="logo logo-linkedin" alt="LinkedIn" title="Linkedin Robin Andres" />
+    <div class="network-icon" id="Dawn-color">
+      <Linkedin class="logo" />
+    </div>
   </a>
 
   <a id="emailLink" target="_blank">
-    <img class="logo logo-email" alt="Email" title="Contacto email Robin" />
+    <div class="network-icon" id="Dawn-color">
+      <Send class="logo" />
+    </div>
   </a>
 </div>
 
@@ -16,61 +34,54 @@
   .socials {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2.5rem;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    background-color: var(--color-surface);
+    padding: 4px;
   }
-
   .socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
+    width: clamp(16px, 50vw, 28px);
+    height: clamp(16px, 50vw, 28px);
   }
 
+  .network-icon {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
   .logo {
-    width: clamp(20px, 5vw, 70px);
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     transition: transform 0.2s ease;
   }
-
   .socials a:hover .logo {
     transform: scale(1.1);
-    transform: rotate(5deg);
+    transform: rotate(-10deg);
   }
 
-  .logo-github {
-    content: url("/images/logos/github/github-black.png");
+  @media (min-width: 768px) {
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
 
-  .logo-linkedin {
-    content: url("/images/logos/linkedin/Linkedin-black.png");
-  }
-
-  .logo-email {
-    content: url("/images/logos/email/email-black.png");
-  }
-
-  :global(.dark) .logo-github {
-    content: url("/images/logos/github/github-white.png");
-  }
-
-  :global(.dark) .logo-linkedin {
-    content: url("/images/logos/linkedin/Linkedin-white.png");
-  }
-
-  :global(.dark) .logo-email {
-    content: url("/images/logos/email/email-white.png");
+  @media (min-width: 1024px) {
+    .socials {
+      display: flex;
+      flex-direction: column;
+    }
   }
 </style>
 
 <script is:inline>
   const user = "robin.a.dev";
   const domain = "gmail.com";
-
   const emailLink = document.getElementById("emailLink");
   emailLink.href = `mailto:${user}@${domain}`;
   emailLink.title = `${user}@${domain}`;
