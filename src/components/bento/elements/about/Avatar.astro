@@ -8,16 +8,16 @@ import CircleAlert from "../../../../assets/images/svgs/Circle-Alert.svg";
  * - aviability : boolean
  */
 
-const { size = "1.5rem", aviability = true } = Astro.props;
+const { aviability = true } = Astro.props;
 ---
 
 <div class="avatar-container">
   <span
     class="avatar-frame"
-    style={`border-color: ${aviability ? "var(--green)" : "var(--yellow)"}`}
+    style={`outline-color: ${aviability ? "var(--green)" : "var(--yellow)"}`}
     title={`${aviability ? "Disponible" : "Trabajando"}`}
   >
-    <span class="avatar-icon" style={`--icon-size: ${size}`}>
+    <span class="avatar-icon">
       {
         aviability ? (
           <CircleCheck class="icon check" />
@@ -37,33 +37,33 @@ const { size = "1.5rem", aviability = true } = Astro.props;
   }
 
   .avatar-image {
-    --size: 108px;
+    --size: 128px;
     width: var(--size);
     height: var(--size);
     object-fit: cover;
     border-radius: 50%;
+    padding: 4px;
   }
 
   .avatar-frame {
     position: relative;
     display: grid;
     place-content: center;
-    padding: 2px;
-    border: 2px solid;
+    outline: 2.5px solid;
+    outline-offset: -2px;
     border-radius: 50%;
   }
 
   .avatar-icon {
     position: absolute;
-    width: 22px;
-    height: 22px;
-    bottom: 3px;
-    right: 5px;
+    right: 4px;
+    bottom: 4px;
   }
 
   .icon {
-    width: var(--icon-size, 1.5rem);
-    height: var(--icon-size, 1.5rem);
+    width: var(--font-size-3);
+    height: var(--font-size-3);
+    fill: var(--color-surface);
   }
 
   .check {
@@ -72,16 +72,5 @@ const { size = "1.5rem", aviability = true } = Astro.props;
 
   .alert {
     color: var(--yellow);
-  }
-
-  .avatar-frame::before {
-    position: absolute;
-    content: "";
-    width: 22px;
-    height: 22px;
-    background-color: var(--color-surface);
-    border-radius: 50%;
-    bottom: 2px;
-    right: 4px;
   }
 </style>

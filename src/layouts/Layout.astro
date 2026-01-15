@@ -43,7 +43,7 @@
       crossorigin
     />
 
-    <title>Robbin D. ev</title>
+    <title>Portafolio Robin1238</title>
   </head>
   <body>
     <slot />
@@ -70,6 +70,7 @@
       --bg-second-surface: var(--color-surface-2);
       --divisor: var(--color-divider);
       --text-color: var(--color-text);
+      --gradient-top: var(var(--gradient-top));
       --green: #2a9f30;
       --yellow: #eca927;
 
@@ -93,6 +94,7 @@
       --color-text: #101316;
       --text-inverse: #f0f5f7;
       --muted: #10131680;
+      --gradient-top: linear-gradient(to top, #e6e9eb, #f0f5f750, #f0f5f700);
     }
 
     :root[data-theme="dark"] {
@@ -106,6 +108,7 @@
       --color-text: #f0f5f7;
       --text-inverse: #101316;
       --muted: #fef7ff80;
+      --gradient-top: linear-gradient(to top, #101316, #1013164d, #10131600);
     }
 
     @media (prefers-color-scheme: dark) {

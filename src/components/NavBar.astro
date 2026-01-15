@@ -7,12 +7,11 @@ import GitHub from "../assets/images/svgs/GitHub.svg";
  * Props:
  * - size: string
  */
-
 const { size = "1.5rem" } = Astro.props;
 ---
 
-<nav style={`--icon-size: ${size}`}>
-  <a href="/"><span class="logo-robin">RA.</span> </a>
+<nav style={`--icon-size: ${size}`} translate="no">
+  <a href="/"><span translate="no" class="logo-robin notranslate">RA.</span> </a>
 
   <div class="container">
     <a href="https://github.com/Robin1238" target="_blank" aria-label="GitHub">
