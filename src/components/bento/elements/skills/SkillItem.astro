@@ -4,7 +4,7 @@ const { title, description } = Astro.props;
 
 <div class="skill-item">
   <div class="skill-icon">
-    <div class="icon" id="Dawn-color">
+    <div class="icon">
       <slot />
     </div>
   </div>
@@ -35,6 +35,7 @@ const { title, description } = Astro.props;
   }
 
   .icon {
+    color: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -14,7 +14,7 @@ const { aviability = true } = Astro.props;
 <div class="avatar-container">
   <span
     class="avatar-frame"
-    style={`outline-color: ${aviability ? "var(--green)" : "var(--yellow)"}`}
+    style={`outline-color: ${aviability ? "var(--accent)" : "var(--yellow)"}`}
     title={`${aviability ? "Disponible" : "Trabajando"}`}
   >
     <span class="avatar-icon">
@@ -67,7 +67,7 @@ const { aviability = true } = Astro.props;
   }
 
   .check {
-    color: var(--green);
+    color: var(--accent);
   }
 
   .alert {

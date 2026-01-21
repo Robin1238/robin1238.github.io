@@ -1,0 +1,35 @@
+<section>
+  <article class="theme light">
+    <div class="colors"></div>
+    <div class="colors"></div>
+    <div class="colors"></div>
+  </article>
+  <article class="theme dark">
+    <div class="colors"></div>
+    <div class="colors"></div>
+    <div class="colors"></div>
+  </article>
+</section>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  .theme {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .theme {
+    display: flex;
+    gap: 10px;
+  }
+
+  .colors {
+    --size: 150px;
+    width: var(--size);
+    height: var(--size);
+    background-color: aqua;
+  }
+</style>
