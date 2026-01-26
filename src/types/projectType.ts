@@ -3,7 +3,10 @@ export type Project = {
   description: string;
   shortDesc: string;
   image: string;
-  link?: string;
+  ref?: {
+    link: string;
+    show: boolean;
+  };
   tech: string[];
   status?: string;
 

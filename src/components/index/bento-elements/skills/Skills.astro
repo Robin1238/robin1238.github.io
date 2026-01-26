@@ -1,0 +1,53 @@
+---
+import SkillItem from "./SkillItem.astro";
+import Code from "../../../../assets/images/svgs/Code.svg";
+import Braces from "../../../../assets/images/svgs/Braces.svg";
+import Film from "../../../../assets/images/svgs/Film.svg";
+import Layout from "../../../../assets/images/svgs/Layout.svg";
+---
+
+<div class="skills">
+  <div class="skills-list">
+    <SkillItem
+      title="Desarrollo frontend"
+      description="UI responsive, componentes y animaciones."
+    >
+      <Code />
+    </SkillItem>
+
+    <SkillItem
+      title="Backend & Base de datos"
+      description="CRUD básico y manejo de MySQL."
+    >
+      <Braces />
+    </SkillItem>
+
+    <SkillItem title="Edición de video" description="Edición de video para web y redes.">
+      <Film />
+    </SkillItem>
+    <SkillItem
+      title="Diseño UI / UX"
+      description="Interfaces limpias y jerarquía visual."
+    >
+      <Layout />
+    </SkillItem>
+  </div>
+
+  <style>
+    .skills {
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      height: 100%;
+    }
+    .skills-list {
+      gap: 8px;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  </style>
+</div>

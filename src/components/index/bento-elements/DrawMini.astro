@@ -1,0 +1,33 @@
+<a href="/art">
+  <div class="container">
+    <img
+      src="/images/webp/Draw2.webp"
+      class="draw"
+      alt="Dibujo decorarivo hecho por Robin"
+      width="1440"
+      height="1200"
+    />
+  </div>
+</a>
+
+<style>
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .draw {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 4px;
+    filter: brightness(90%) blur(0.3px);
+  }
+
+  :global(.dark) .draw {
+    filter: brightness(80%);
+  }
+</style>

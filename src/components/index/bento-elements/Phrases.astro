@@ -1,0 +1,49 @@
+<div class="container">
+  <p class="text center" id="random-text"></p>
+</div>
+
+<style>
+  .container {
+    height: 100%;
+    height: 100%;
+    padding: 12px;
+    display: grid;
+    place-content: center;
+    background-color: var(--bg-surface-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  .text {
+    font-size: var(--font-size-1);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.3px;
+    text-wrap: balance;
+  }
+</style>
+
+<script>
+  const renderPhrase = () => {
+    let phrases = [
+      "Me encanta One Piece!!!",
+      "Desarrollador independiente",
+      "Kaizoku-ou ni ore wa naru!!!",
+      "¿Cuándo muere un hombre?",
+      "Un hombre muere cuando es olvidado.",
+      "Sé que algún día me pagarán por hacer esto.",
+      "Para arreglar el bug, hay qeu psaren ocmo gub, bug esr le.",
+      "Espero se renderice una frase seria en un momento serio.",
+    ];
+
+    const randomText = document.getElementById("random-text");
+
+    if (!randomText) return null;
+
+    let random = Math.floor(Math.random() * phrases.length);
+    let randomTextPhrase = phrases[random];
+
+    randomText.textContent = randomTextPhrase;
+  };
+
+  renderPhrase();
+</script>

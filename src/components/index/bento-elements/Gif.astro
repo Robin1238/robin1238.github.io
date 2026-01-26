@@ -1,0 +1,36 @@
+<a
+  class="container"
+  href="https://www.crunchyroll.com/es/series/GRMG8ZQZR/one-piece"
+  target="_blank"
+  aria-label="One piece anime"
+>
+  <video autoplay muted loop playsinline class="gif">
+    <source src="/images/Merry.webm" type="video/webm" />
+  </video>
+</a>
+
+<style>
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gif {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      aspect-ratio: auto;
+    }
+  }
+</style>

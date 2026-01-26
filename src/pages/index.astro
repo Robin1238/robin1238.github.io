@@ -1,10 +1,15 @@
 ---
-import Bento from "../components/bento/Bento.astro";
+import Bento from "../components/index/Bento.astro";
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/NavBar.astro";
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/images/webp/Avatar.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/webp/Draw1.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/webp/Draw2.webp" fetchpriority="high" />
+  </Fragment>
   <NavBar />
   <Bento />
 </Layout>

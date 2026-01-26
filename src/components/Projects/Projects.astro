@@ -1,69 +1,110 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-import { projects } from "../../data/projectsData.ts";
+import { projects } from "../../data/projectsData";
 ---
 
-<section class="projects-container">
-  <p>
-    <h1 id="Dawn-color">Proyectos</h1>
-    <p class="text">Pequeña selección de trabajos que he realizado</p>
-  </p>
-  <div class="projects-grid">
+<section class="container">
+  <article class="left-side">
+    <div class="title">
+      <h1 id="Dawn-slide">PROYECTOS</h1>
+    </div>
+  </article>
+
+  <article class="projects">
     {projects.map((project) => <ProjectCard {...project} />)}
-  </div>
+  </article>
+
+  <article class="right-side">
+    <div class="gif-container">
+      <p>Working On</p>
+      <video autoplay muted loop playsinline>
+        <source src="/images/Working.webm" type="video/webm" />
+      </video>
+    </div>
+  </article>
 </section>
 
 <style>
-  .projects-container {
-    width: 100%;
-    padding: 0px 150px;
-  }
-
-  .projects-container h1 {
-    font-family: "Array", sans-serif;
-    font-size: clamp(1.25rem, 3vw, 4.75rem);
-  }
-
-  .projects-container .text {
-    font-family: "ABeeZee", Verdana;
-    font-size: clamp(1.25rem, 1vw, 1rem);
-  }
-  .projects-container p {
-    margin-bottom: 2rem;
-  }
-
-  .projects-grid {
+  .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+    gap: 12px;
   }
 
-  .mobile-warning {
+  .left-side {
     display: none;
   }
-  .mobile-warning .text {
-    font-family: "ABeeZee", Verdana;
+
+  .right-side {
+    display: none;
   }
 
-  @media (max-width: 769px) {
-    .projects-container {
-      display: none;
-    }
-    .mobile-warning {
-      display: flex;
-      flex-direction: column;
-      gap: 50px;
+  .projects {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      text-align: center;
-      font-size: 1.2rem;
-      padding: 0px 20px;
+  /* Desktop */
+  @media (min-width: 768px) {
+    .container {
+      grid-template-columns: clamp(10vh, 18vh, 28vh) 1fr;
     }
-    .mobile-warning .gif {
-      border-radius: 20px;
+
+    .left-side {
+      display: block;
+    }
+
+    .title {
+      height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 40px;
       overflow: hidden;
+    }
+
+    .title h1 {
+      color: var(--accent);
+      font-family: "Array";
+      writing-mode: sideways-lr;
+      user-select: none;
+      white-space: nowrap;
+
+      font-size: clamp(12vh, 17vh, 90vh);
+      line-height: 0.9;
+    }
+
+    .projects {
+      gap: 12px;
+    }
+  }
+
+  @media (min-width: 1044px) {
+    .container {
+      grid-template-columns: clamp(10vh, 18vh, 28vh) 3fr 1.2fr;
+    }
+    .right-side {
+      display: block;
+    }
+
+    .gif-container {
+      height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: sticky;
+      top: 40px;
+      overflow: hidden;
+    }
+
+    .gif-container video {
+      min-width: 150px;
+      max-width: 250px;
+      border-radius: 20px;
     }
   }
 </style>

@@ -1,0 +1,90 @@
+---
+import GitHub from "../../../assets/images/svgs/GitHub.svg";
+import Linkedin from "../../../assets/images/svgs/Linkedin.svg";
+import Send from "../../../assets/images/svgs/Send.svg";
+import Instagram from "../../../assets/images/svgs/Instagram.svg";
+---
+
+<div class="socials">
+  <a href="https://www.instagram.com/robbin.1239/" target="_blank">
+    <div class="network-icon">
+      <Instagram class="logo" />
+    </div>
+  </a>
+  <a href="https://github.com/Robin1238" target="_blank">
+    <div class="network-icon">
+      <GitHub class="logo" />
+    </div>
+  </a>
+
+  <a href="https://www.linkedin.com/in/robbin1238/" target="_blank">
+    <div class="network-icon">
+      <Linkedin class="logo" />
+    </div>
+  </a>
+
+  <a id="emailLink" target="_blank">
+    <div class="network-icon">
+      <Send class="logo" />
+    </div>
+  </a>
+</div>
+
+<style>
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-surface);
+    padding: 8px;
+  }
+  .socials a {
+    margin: auto;
+    width: clamp(16px, 50vw, 28px);
+    height: clamp(16px, 50vw, 28px);
+  }
+
+  .network-icon {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+  }
+  .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      transform: rotate(-10deg);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1044px) {
+    .socials {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script is:inline>
+  const user = "robin.a.dev";
+  const domain = "gmail.com";
+  const emailLink = document.getElementById("emailLink");
+  emailLink.href = `mailto:${user}@${domain}`;
+  emailLink.title = `${user}@${domain}`;
+</script>

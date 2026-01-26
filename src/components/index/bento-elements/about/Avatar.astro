@@ -1,0 +1,76 @@
+---
+import CircleCheck from "../../../../assets/images/svgs/Circle-Check.svg";
+import CircleAlert from "../../../../assets/images/svgs/Circle-Alert.svg";
+
+/**
+ * Props:
+ * - size: string
+ * - aviability : boolean
+ */
+
+const { aviability = true } = Astro.props;
+---
+
+<div class="avatar-container">
+  <span
+    class="avatar-frame"
+    style={`outline-color: ${aviability ? "var(--accent)" : "var(--yellow)"}`}
+    title={`${aviability ? "Disponible" : "Trabajando"}`}
+  >
+    <span class="avatar-icon">
+      {
+        aviability ? (
+          <CircleCheck class="icon check" />
+        ) : (
+          <CircleAlert class="icon alert" />
+        )
+      }
+    </span>
+    <img src="/images/webp/Avatar.webp" class="avatar-image" alt="Avatar Robbin D. ev" />
+  </span>
+</div>
+
+<style>
+  .avatar-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .avatar-image {
+    --size: 128px;
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 4px;
+  }
+
+  .avatar-frame {
+    position: relative;
+    display: grid;
+    place-content: center;
+    outline: 2.5px solid;
+    outline-offset: -2px;
+    border-radius: 50%;
+  }
+
+  .avatar-icon {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+  }
+
+  .icon {
+    width: var(--font-size-3);
+    height: var(--font-size-3);
+    fill: var(--bg-surface);
+  }
+
+  .check {
+    color: var(--accent);
+  }
+
+  .alert {
+    color: var(--yellow);
+  }
+</style>

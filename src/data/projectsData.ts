@@ -20,7 +20,7 @@ export const projects: Project[] = [
 
     image: "/images/projects/Cyac.png",
     tech: ["Astro", "HTML", "CSS"],
-    link: "https://robin1238.github.io/CYAC/gallery/",
+    ref: { link: "https://robin1238.github.io/CYAC/gallery/", show: false },
     year: 2025,
     status: "Working",
   },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     shortDesc: "Web institucional con CMS propio.",
     image: "/images/projects/Colcop.png",
     tech: ["React", "CSS", "JS", "PHP", "Laravel"],
-    link: "https://colcooperativogarzon.edu.co/",
+    ref: { link: "https://colcooperativogarzon.edu.co/", show: true },
     year: 2024,
   },
 ];

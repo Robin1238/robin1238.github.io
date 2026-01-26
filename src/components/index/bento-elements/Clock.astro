@@ -1,0 +1,29 @@
+<div class="local-time">
+  <span>Hora local:</span>
+  <strong id="clock"> </strong>
+</div>
+
+<style>
+  .local-time {
+    font-family: monospace;
+    font-size: 1.2rem;
+  }
+</style>
+
+<script is:inline>
+  const clock = document.getElementById("clock");
+
+  function updateTime() {
+    const time = new Date().toLocaleTimeString("es-CO", {
+      timeZone: "America/Bogota",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    clock.textContent = time;
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
