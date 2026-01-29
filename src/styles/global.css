@@ -104,9 +104,18 @@
     background: var(--bg);
     color: var(--color-text);
     font-family: var(--font-sans), sans-serif;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
     background-image: url("../assets/Bg.webp");
     background-position: center;
     background-attachment: fixed;
+    opacity: 0.3;
+    z-index: -1;
   }
 
   a:where(:link, :visited) {

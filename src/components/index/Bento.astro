@@ -40,13 +40,14 @@ import Networks from "./bento-elements/Networks.astro";
     border: 1px solid var(--bg-surface);
   }
 
+  :root[data-theme="dark"] .card {
+    border: 1px solid var(--divisor);
+  }
+
   .item-mini-draw {
     display: none;
   }
 
-  :root[data-theme="dark"] .card {
-    border: 1px solid var(--divisor);
-  }
   @media (min-width: 480px) {
     .bento {
       padding: 8px 48px;

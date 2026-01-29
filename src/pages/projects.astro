@@ -5,6 +5,15 @@ import NavBar from "../components/NavBar.astro";
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      href="/fonts/Array/Array-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </Fragment>
   <NavBar />
   <Project />
 </Layout>

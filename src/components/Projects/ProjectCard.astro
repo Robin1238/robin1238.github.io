@@ -1,6 +1,13 @@
 ---
 import Arrow from "../../assets/images/svgs/Arrow.svg";
-const { title, description, image, year, status, ref = "/projects" } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  year,
+  status,
+  ref = { link: "/projects", show: false },
+} = Astro.props;
 ---
 
 <div class="card">
@@ -10,21 +17,19 @@ const { title, description, image, year, status, ref = "/projects" } = Astro.pro
   </div>
 
   <div class="content-container">
-    <div class="content">
-      <div class="header">
-        <h2>{title}</h2>
-        <p>{year}</p>
-      </div>
-
-      <p class="description">
-        {description}
-      </p>
+    <div class="header">
+      <h2 class="title">{title}</h2>
+      <p class="badge">{year}</p>
     </div>
+
+    <p class="description">
+      {description}
+    </p>
 
     {
       ref.show && (
         <a href={`${ref.link}`} target="_blank">
-          <div class="button-primary">
+          <div class="button">
             <span>Ver proyecto</span>
 
             <Arrow />
@@ -37,21 +42,29 @@ const { title, description, image, year, status, ref = "/projects" } = Astro.pro
 
 <style>
   .card {
-    color: var(--color-text);
-    backdrop-filter: blur(2px);
-    box-shadow: var(--shadow-4);
-    background-color: var(--bg-surface-2-glass);
-
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: var(--bg-surface);
+    border-radius: 8px;
+    padding: 6px;
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
+    box-shadow: var(--shadow-4);
+    border: 1px solid var(--bg-surface);
+  }
+
+  :root[data-theme="dark"] .card {
+    border: 1px solid var(--divisor);
   }
 
   .image-container {
+    position: relative;
+    display: grid;
+    place-content: center;
     overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
   }
 
   .image-container img {
@@ -64,22 +77,13 @@ const { title, description, image, year, status, ref = "/projects" } = Astro.pro
   .image-container span {
     font-family: "ABeeZee";
     position: absolute;
-    top: 5px;
-    left: 5px;
+    inset: 6px 6px auto auto;
     background-color: var(--accent);
     color: var(--color-text-inverse);
-    padding: 8px;
+    padding: 12px;
     border-radius: 8px;
     font-size: var(--font-size-0);
-    font-weight: 500;
-  }
-
-  .content-container {
-    padding: 12px;
-    display: flex;
-    border-radius: 12px;
-    flex-direction: column;
-    justify-content: space-between;
+    font-weight: 700;
   }
 
   .header {
@@ -88,13 +92,14 @@ const { title, description, image, year, status, ref = "/projects" } = Astro.pro
     align-items: center;
   }
 
-  .header h2 {
+  .header .title {
+    width: 80%;
     font-family: "ABeeZee";
     font-size: var(--font-size-2);
     font-weight: 700;
   }
 
-  .header p {
+  .header .badge {
     background-color: var(--bg-glass);
     padding: 6px;
     border-radius: 4px;
@@ -103,55 +108,41 @@ const { title, description, image, year, status, ref = "/projects" } = Astro.pro
     font-size: var(--font-size-1);
   }
 
-  .content {
-    gap: 6px;
-    width: 100%;
-    padding: 8px;
+  .content-container {
+    /* max-height: 220px; */
+    padding: 6px;
+    gap: 12px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
-  .content .description {
+  .description {
     scrollbar-color: var(--color-text) var(--bg-surface-2-glass);
     opacity: 0.8;
-    letter-spacing: -0.5px;
     font-weight: 500;
-
-    text-wrap: pretty;
+    min-height: 40px;
     overflow-y: auto;
     padding-right: 6px;
   }
 
-  .button-primary span {
+  .button {
+    background-color: var(--accent);
+    color: var(--bg-surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
-  }
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: var(--shadow-4);
+    transition: opacity 0.2s ease;
 
-  @media (min-width: 480px) {
-    .card {
-      width: 100%;
-      flex-direction: row;
-    }
-
-    .content-container {
-      width: 60%;
-      gap: 12px;
-      padding: 12px;
-      display: flex;
-      border-radius: 12px;
-      flex-direction: column;
-    }
-
-    .image-container {
-      padding: 12px;
-      width: 40%;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .button-primary {
-      width: max-content;
-      align-self: self-end;
-      justify-self: flex-end;
+    &:hover {
+      opacity: 0.5;
     }
   }
 </style>
