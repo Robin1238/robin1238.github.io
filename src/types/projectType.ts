@@ -1,5 +1,8 @@
 export type Project = {
-  title: string;
+  title: {
+    organization: string;
+    service: string;
+  };
   description: string;
   shortDesc: string;
   image: string;

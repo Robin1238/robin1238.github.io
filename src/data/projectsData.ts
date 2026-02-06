@@ -2,7 +2,7 @@ import type { Project } from "../types/projectType";
 
 export const projects: Project[] = [
   {
-    title: "CAF-FIT",
+    title: { organization: "CAF-FIT", service: "Aplicación móvil" },
     description:
       "Aplicación móvil desarrollada para la gestión de un gimnasio, con arquitectura cliente-servidor, base de datos integrada y sistema de roles y permisos para usuarios y administradores.",
     shortDesc: "App móvil para gestión de gimnasio.",
@@ -12,20 +12,20 @@ export const projects: Project[] = [
     year: 2025,
     status: "Working",
   },
-  {
-    title: "Landing Recopilatoria",
-    description:
-      "Página web creada como regalo personal para mostrar dibujos y recuerdos especiales. Diseñada para exhibir ilustraciones de manera visual y cuidada, combinando diseño minimalista con un enfoque emocional y estético.",
-    shortDesc: "Landing visual para ilustraciones y recuerdos.",
+  // {
+  //   title: "Landing Recopilatoria",
+  //   description:
+  //     "Página web creada como regalo personal para mostrar dibujos y recuerdos especiales. Diseñada para exhibir ilustraciones de manera visual y cuidada, combinando diseño minimalista con un enfoque emocional y estético.",
+  //   shortDesc: "Landing visual para ilustraciones y recuerdos.",
 
-    image: "/images/projects/Cyac.png",
-    tech: ["Astro", "HTML", "CSS"],
-    ref: { link: "https://robin1238.github.io/CYAC/gallery/", show: false },
-    year: 2025,
-    status: "Working",
-  },
+  //   image: "/images/projects/Cyac.png",
+  //   tech: ["Astro", "HTML", "CSS"],
+  //   ref: { link: "https://robin1238.github.io/CYAC/gallery/", show: false },
+  //   year: 2025,
+  //   status: "Working",
+  // },
   {
-    title: "Pagina Web Colegio Cooperativo",
+    title: { organization: "Página web Colegio Cooperativo", service: "Página web" },
     description:
       "Sitio web institucional con servidor y CMS propio para la gestión de contenidos, diseñado con navegación intuitiva, diseño responsivo y optimización en accesibilidad y rendimiento.",
     shortDesc: "Web institucional con CMS propio.",

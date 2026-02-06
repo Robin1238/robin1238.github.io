@@ -18,7 +18,7 @@ const {
 
   <div class="content-container">
     <div class="header">
-      <h2 class="title">{title}</h2>
+      <h2 class="title">{title.organization}</h2>
       <p class="badge">{year}</p>
     </div>
 
@@ -93,14 +93,15 @@ const {
   }
 
   .header .title {
-    width: 80%;
-    font-family: "ABeeZee";
-    font-size: var(--font-size-2);
-    font-weight: 700;
+    font-family: "Array";
+    font-weight: 400;
+    color: var(--accent);
+    /* font-family: "ABeeZee";
+    font-weight: 700; */
   }
 
   .header .badge {
-    background-color: var(--bg-glass);
+    background-color: var(--bg-surface-2);
     padding: 6px;
     border-radius: 4px;
     color: var(--transparent);
