@@ -1,5 +1,6 @@
 ---
-import Arrow from "../../assets/images/svgs/Arrow.svg";
+import ExternalLink from "../../assets/images/svgs/External-Link.svg";
+
 const {
   title,
   description,
@@ -13,7 +14,7 @@ const {
 <div class="card">
   <div class="image-container">
     {status && <span>{status}</span>}
-    <img src={image} alt={title} loading="lazy" />
+    <img src={image} alt={title.service} loading="lazy" />
   </div>
 
   <div class="content-container">
@@ -30,9 +31,9 @@ const {
       ref.show && (
         <a href={`${ref.link}`} target="_blank">
           <div class="button">
-            <span>Ver proyecto</span>
+            <span>Ir</span>
 
-            <Arrow />
+            <ExternalLink class="icon" />
           </div>
         </a>
       )
@@ -55,6 +56,11 @@ const {
 
   :root[data-theme="dark"] .card {
     border: 1px solid var(--divisor);
+  }
+
+  .icon {
+    width: var(--font-size-1);
+    height: var(--font-size-1);
   }
 
   .image-container {

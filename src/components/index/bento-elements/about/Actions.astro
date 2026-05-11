@@ -6,16 +6,16 @@ import Link from "../../../../assets/images/svgs/Link.svg";
 <div class="actions-container">
   <div class="curiosities">
     <div class="card-curiosities">
-      <span class="value">+2</span>
+      <span class="value">+1</span>
       <p class="desc muted center">Años de Experiencia</p>
     </div>
     <div class="card-curiosities">
       <span class="value">100%</span>
-      <p class="desc muted center">Aprendizaje Autodidacta</p>
+      <p class="desc muted center">Soluciones eficientes</p>
     </div>
     <div class="card-curiosities">
       <span class="value">∞</span>
-      <p class="desc muted center">Aprendizaje Continuo</p>
+      <p class="desc muted center">Curiosidad</p>
     </div>
   </div>
   <div class="buttons">
@@ -26,8 +26,14 @@ import Link from "../../../../assets/images/svgs/Link.svg";
     >
       <FileUser class="icon" /><span> CV</span>
     </a>
-    <a href="https://github.com/Robin1238" class="btn button-secondary" target="_blank">
-      <Link class="icon" /><span>Sobre Mí</span>
+    <a
+      id="emailLink"
+      href="https://github.com/Robin1238"
+      class="btn button-secondary"
+      target="_blank"
+    >
+      Hablemos!
+      <!-- <Link class="icon" /><span>Sobre Mí</span> -->
     </a>
   </div>
 </div>
@@ -114,3 +120,11 @@ import Link from "../../../../assets/images/svgs/Link.svg";
     }
   }
 </style>
+
+<script is:inline>
+  const user = "robin.a.dev";
+  const domain = "gmail.com";
+  const emailLink = document.getElementById("emailLink");
+  emailLink.href = `mailto:${user}@${domain}`;
+  emailLink.title = `${user}@${domain}`;
+</script>

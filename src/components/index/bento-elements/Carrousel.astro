@@ -1,16 +1,16 @@
 ---
 const images = [
-  "images/habilities/HTML5.png",
-  "images/habilities/CSS3.png",
-  "images/habilities/JavaScript.png",
-  "images/habilities/TypeScript.png",
-  "images/habilities/Astro.png",
-  "images/habilities/React.png",
-  "images/habilities/TailwindCSS.png",
-  "images/habilities/MySQL.png",
-  "images/habilities/Node.js.png",
-  "images/habilities/VSCode.png",
-  "images/habilities/Insomnia.png",
+  { path: "images/habilities/HTML5.png", alt: "Html" },
+  { path: "images/habilities/CSS3.png", alt: "CSS3" },
+  { path: "images/habilities/JavaScript.png", alt: "JavaScript" },
+  { path: "images/habilities/TypeScript.png", alt: "TypeScript" },
+  { path: "images/habilities/Astro.png", alt: "Astro" },
+  { path: "images/habilities/React.png", alt: "React" },
+  { path: "images/habilities/TailwindCSS.png", alt: "Tailwind CSS" },
+  { path: "images/habilities/MySQL.png", alt: "Tailwind CSS" },
+  { path: "images/habilities/Node.js.png", alt: "Tailwind CSS" },
+  { path: "images/habilities/VSCode.png", alt: "Tailwind CSS" },
+  { path: "images/habilities/Insomnia.png", alt: "Tailwind CSS" },
 ];
 
 const allImages = [...images, ...images];
@@ -18,11 +18,14 @@ const animationSpeed = "30s";
 ---
 
 <div class="slider">
-  <div class="slide-track" style={`animation: scroll ${animationSpeed} linear infinite;`}>
+  <div
+    class="slide-track"
+    style={`animation: scroll ${animationSpeed} linear infinite;`}
+  >
     {
-      allImages.map((src) => (
+      allImages.map((image) => (
         <div class="slide">
-          <img class="logo" src={src} alt="" />
+          <img class="logo" src={image.path} alt={`Logo ${image.alt}`} />
         </div>
       ))
     }

@@ -1,5 +1,5 @@
 ---
-import ExternalLink from "../../../../assets/images/svgs/External-Link.svg";
+import Arrow from "../../../../assets/images/svgs/Arrow.svg";
 import { projects } from "../../../../data/projectsData.ts";
 ---
 
@@ -17,7 +17,7 @@ import { projects } from "../../../../data/projectsData.ts";
 
     <a href="/projects" class="btn button-primary">
       <span>Proyectos</span>
-      <ExternalLink class="icon" />
+      <Arrow />
     </a>
   </div>
 </article>
@@ -82,11 +82,6 @@ import { projects } from "../../../../data/projectsData.ts";
     font-size: var(--font-size-1);
   }
 
-  .icon {
-    width: var(--font-size-1);
-    height: var(--font-size-1);
-  }
-
   @media (min-width: 768px) {
     .project-card {
       aspect-ratio: auto;
@@ -124,7 +119,7 @@ import { projects } from "../../../../data/projectsData.ts";
     incoming.classList.add("is-visible");
     outgoing.classList.remove("is-visible");
 
-    title.textContent = p.title;
+    title.textContent = p.title.service;
     desc.textContent = p.shortDesc ?? p.description;
 
     showA = !showA;
