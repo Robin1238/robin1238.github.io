@@ -25,7 +25,24 @@ export const projects: Project[] = [
   //   status: "Working",
   // },
   {
-    title: { organization: "Página web Colegio Cooperativo", service: "Página web" },
+    title: {
+      organization: "Página web Colegio Cooperativo",
+      service: "Página web",
+    },
+    description:
+      "Sitio web institucional con servidor y CMS propio para la gestión de contenidos, diseñado con navegación intuitiva, diseño responsivo y optimización en accesibilidad y rendimiento.",
+    shortDesc: "Web institucional con CMS propio.",
+    image: "/images/projects/Colcop.png",
+    tech: ["React", "CSS", "JS", "PHP", "Laravel"],
+    ref: { link: "https://colcooperativogarzon.edu.co/", show: true },
+    year: 2024,
+  },
+
+  {
+    title: {
+      organization: "Página web Colegio Cooperativo",
+      service: "Página web",
+    },
     description:
       "Sitio web institucional con servidor y CMS propio para la gestión de contenidos, diseñado con navegación intuitiva, diseño responsivo y optimización en accesibilidad y rendimiento.",
     shortDesc: "Web institucional con CMS propio.",
